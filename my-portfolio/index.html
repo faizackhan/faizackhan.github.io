@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faiza Khan | Portfolio</title>
+
+    <meta
+      name="description"
+      content="Interactive portfolio with animated ambient background"
+    />
+    <meta name="author" content="Faiza Khan" />
+
+    <!-- nunito -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Winky Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+    <!-- Winky Rough -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+    <!-- background -->
+    <link rel="stylesheet" href="/background/shift.css" />
+
+    <script>
+      document.documentElement.className = "js";
+      var supportsCssVars = function () {
+        var e,
+          t = document.createElement("style");
+        return (
+          (t.innerHTML = "root: { --tmp-var: bold; }"),
+          document.head.appendChild(t),
+          (e =
+            !!(window.CSS &&
+              window.CSS.supports &&
+              window.CSS.supports("font-weight", "var(--tmp-var)"))),
+          t.parentNode.removeChild(t),
+          e
+        );
+      };
+      supportsCssVars() ||
+        alert("Please view this demo in a modern browser that supports CSS Variables.");
+    </script>
+  </head>
+
+  <body class="demo-3">
+    <!-- background -->
+    <div class="content content--canvas"></div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+
+    <!-- scripts -->
+    <script src="/background/noise.min.js"></script>
+    <script src="/background/util.js"></script>
+    <script src="/background/shift.js"></script>
+  </body>
+</html>

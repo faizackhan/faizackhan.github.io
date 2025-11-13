@@ -1,0 +1,418 @@
+:root {
+  --tabsHeight: 36px;
+
+ /* Base colors */
+  --tab1: #524864;
+  --tab2: #6986b7;
+  --tab3: #334894;
+  --tab4: #232269;
+  --tab5: #180c63;
+
+ /* Hover colors */
+  --tab1-hover: #5f688e;
+  --tab2-hover: #615f8e;
+  --tab3-hover: #615f8e;
+  --tab4-hover: #615f8e;
+  --tab5-hover: #615f8e;
+
+  /* Selected colors */
+  --tab1-selected: #384552;
+  --tab2-selected: #3676bc;
+  --tab3-selected: #5076bd;
+  --tab4-selected: #2f59a1;
+  --tab5-selected: #1c338f;
+
+  /*page colors*/
+  --page1: #ffffff24; 
+  --page2: #7795ff70; 
+  --page3: #0062ff46;
+  --page4: #0d42ca63;  
+  --page5: #02008761;  
+
+    /*tab font colors*/
+  --tabfont1: #ffffff; 
+  --tabfont2: #ffffff; 
+  --tabfont3: #ffffff; 
+  --tabfont4: #ffffff;  
+  --tabfont5: #ffffff;   
+
+}
+
+
+/* MAIN TAB COLOUR */
+.folder-tab:nth-child(1) {
+  background-color: var(--tab1);
+  color: var(--tabfont1);
+}
+.folder-tab:nth-child(2) {
+  background-color: var(--tab2);
+  color: var(--tabfont2);
+}
+.folder-tab:nth-child(3) {
+  background-color: var(--tab3);
+  color: var(--tabfont3);
+}
+.folder-tab:nth-child(4) {
+  background-color: var(--tab4);
+  color: var(--tabfont4);
+}
+.folder-tab:nth-child(5) {
+  background-color: var(--tab5);
+  color: var(--tabfont5);
+}
+/*  TAB SIDES COLOUR  */
+.folder-tab:nth-child(1)::before,
+.folder-tab:nth-child(1)::after { background-color: var(--tab1); }
+
+.folder-tab:nth-child(2)::before,
+.folder-tab:nth-child(2)::after { background-color: var(--tab2); }
+
+.folder-tab:nth-child(3)::before,
+.folder-tab:nth-child(3)::after { background-color: var(--tab3); }
+
+.folder-tab:nth-child(4)::before,
+.folder-tab:nth-child(4)::after { background-color: var(--tab4); }
+
+.folder-tab:nth-child(5)::before,
+.folder-tab:nth-child(5)::after { background-color: var(--tab5); }
+
+
+/*  TABS SELECTED/HOVER COLOURS  */
+
+.folder-tab:nth-child(1):hover {
+  background-color: var(--tab1-hover);
+}
+.folder-tab:nth-child(1).selected {
+  background-color: var(--tab1-selected);
+}
+
+.folder-tab:nth-child(2):hover {
+  background-color: var(--tab2-hover);
+}
+.folder-tab:nth-child(2).selected {
+  background-color: var(--tab2-selected);
+}
+
+.folder-tab:nth-child(3):hover {
+  background-color: var(--tab3-hover);
+}
+.folder-tab:nth-child(3).selected {
+  background-color: var(--tab3-selected);
+}
+
+.folder-tab:nth-child(4):hover {
+  background-color: var(--tab4-hover);
+}
+.folder-tab:nth-child(4).selected {
+  background-color: var(--tab4-selected);
+}
+
+.folder-tab:nth-child(5):hover {
+  background-color: var(--tab5-hover);
+}
+.folder-tab:nth-child(5).selected {
+  background-color: var(--tab5-selected);
+}
+
+/*  TAB SIDES SELECTED / HOVER COLOURS  */
+
+.folder-tab:nth-child(1):hover::before,
+.folder-tab:nth-child(1):hover::after{
+  background-color: var(--tab1-hover);
+}
+.folder-tab:nth-child(1).selected::before,
+.folder-tab:nth-child(1).selected::after {
+  background-color: var(--tab1-selected);
+  z-index: -1;
+}
+
+.folder-tab:nth-child(2):hover::before,
+.folder-tab:nth-child(2):hover::after{
+  background-color: var(--tab2-hover);
+}
+.folder-tab:nth-child(2).selected::before,
+.folder-tab:nth-child(2).selected::after {
+  background-color: var(--tab2-selected);
+  z-index: -1;
+}
+
+.folder-tab:nth-child(3):hover::before,
+.folder-tab:nth-child(3):hover::after{
+  background-color: var(--tab3-hover);
+}
+.folder-tab:nth-child(3).selected::before,
+.folder-tab:nth-child(3).selected::after {
+  background-color: var(--tab3-selected);
+  z-index: -1;
+}
+
+.folder-tab:nth-child(4):hover::before,
+.folder-tab:nth-child(4):hover::after{
+  background-color: var(--tab4-hover);
+}
+.folder-tab:nth-child(4).selected::before,
+.folder-tab:nth-child(4).selected::after {
+  background-color: var(--tab4-selected);
+  z-index: -1;
+}
+
+.folder-tab:nth-child(5):hover::before,
+.folder-tab:nth-child(5):hover::after{
+  background-color: var(--tab5-hover);
+}
+.folder-tab:nth-child(5).selected::before,
+.folder-tab:nth-child(5).selected::after {
+  background-color: var(--tab5-selected);
+  z-index: -1;
+}
+
+
+
+.folder-tab {
+  transition: background-color 0.25s ease-in-out;
+}
+
+
+body {
+  background-color: #010410;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.folder-tab {
+  height: var(--tabsHeight);
+  position: relative;
+  top: 10px;
+  background-color: var(--tabColor);
+  left: 28px;
+  display: inline-block;
+  z-index: 1;
+  margin-right: 25px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.25s ease-in-out;
+}
+
+
+.folder-tab.selected,
+.folder-tab:hover {
+  z-index: 3;
+  color: #040000;
+  background-color: var(--tabSelectedColor);
+}
+
+.folder-tab.selected::before,
+.folder-tab.selected::after,
+.folder-tab:hover::before,
+.folder-tab:hover::after {
+  background-color: var(--tabSelectedColor);
+}
+
+.folder-tab::before,
+.folder-tab::after {
+  height: var(--tabsHeight);
+  width: 30px;
+  border-radius: 10px 10px 0 0;
+  background-color: var(--tabColor);
+  content: "";
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  transition: background-color 0.25s ease-in-out;
+}
+
+.folder-tab::before {
+  left: -20px;
+  transform: skewX(-20deg);
+}
+
+.folder-tab::after {
+  right: -20px;
+  transform: skewX(20deg);
+}
+
+.folder-tab span {
+  display: inline-block;
+  margin: 0 8px;
+  height: var(--tabsHeight);
+  line-height: calc(var(--tabsHeight) + 4px);
+  z-index: 3;
+  pointer-events: none;
+}
+
+
+#page {
+  background-color: rgba(255, 255, 255, 0.115);
+  height: calc(80vh - 80px);
+  width: calc(70vw - 10px);
+  position: relative;
+  top: 10px;
+  left: 1px;
+  padding: 30px;
+  
+  border-radius: 0px 40px 40px 40px; 
+  box-shadow: 20px 20px 20px #23032c59;
+}
+
+
+
+/*  ABOUT ME PAGE  */
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+}
+
+/* avatar image */
+.about-avatar {
+  width: 400px;             
+  height: 400px;
+  margin-left: 20px;
+  margin-top: 100px;            
+  object-fit: cover;        
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-avatar:hover {
+  transform: scale(1.03);
+}
+
+/* text styling */
+.about-text {
+  flex: 1;
+  max-width: 600px;
+  color: #ffffff;
+  line-height: 1.7;
+}
+
+.about-text h2 {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.about-text p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.folder-tab span {
+  font-weight: 300;
+  letter-spacing: 0.3px;
+}
+
+/*  PROJECTS PAGE  */
+
+.projects-page {
+  color: #ffffff;
+}
+
+.projects-page h2 {
+  color: #ffffff;
+  font-size: 200;
+  margin-bottom: 1rem;
+}
+
+.projects-page ul {
+  list-style: none;
+  padding: 0;
+}
+
+.projects-page li {
+  background: rgba(61, 100, 255, 0.581);
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.projects-page li:hover {
+  transform: scale(1.03);
+}
+
+/*  SKILLS PAGE  */
+
+.skills-page {
+  color: #97acff;
+}
+
+.skills-page .skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skills-page .skills-grid span {
+  background: rgba(98, 142, 255, 0.379);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0);
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.skills-page .skills-grid span:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px);
+}
+
+
+/*  EXPERIENCE PAGE  */
+
+.experience-page {
+  color: #f8eaff;
+}
+
+.experience-page .timeline {
+  margin-top: 1.5rem;
+  border-left: 2px solid rgba(255, 255, 255, 0.4);
+  padding-left: 1.5rem;
+}
+
+.experience-page .timeline-item {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.experience-page .timeline-item::before {
+  content: "●";
+  position: absolute;
+  left: -1rem;
+  color: #94aaff;
+}
+
+.experience-page .year {
+  font-weight: 700;
+  color: #94aaff;
+  margin-right: 0.5rem;
+}
+
+
+/*  CONTACT PAGE  */
+
+.contact-page {
+  text-align: center;
+  color: #ffe4ff;
+}
+
+.contact-page h2 {
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.contact-page p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.contact-page p:hover {
+  color: #ffbdfc;
+  transition: color 0.2s ease;
+}
