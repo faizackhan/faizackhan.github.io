@@ -1,4 +1,4 @@
-# faizakhan.github.io
+# faizackhan.github.io
 
 ## Credits
 This project uses parts of AmbientCanvasBackgrounds by crnacura.
