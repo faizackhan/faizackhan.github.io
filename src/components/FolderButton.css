@@ -416,3 +416,180 @@ body {
   color: #ffbdfc;
   transition: color 0.2s ease;
 }
+
+.scale-wrapper {
+  transform-origin: top left;
+  width: 100%;
+}
+
+/* scale of ui */
+
+
+#page {
+  overflow: hidden; 
+  position: relative;
+}
+
+.content-scaler {
+  transform-origin: top left;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 1500px) {
+  .content-scaler { transform: scale(0.95); }
+}
+
+@media (max-width: 1300px) {
+  .content-scaler { transform: scale(0.85); }
+}
+
+@media (max-width: 1100px) {
+  .content-scaler { transform: scale(0.75); }
+}
+
+@media (max-width: 900px) {
+  .content-scaler { transform: scale(0.65); }
+}
+
+@media (max-width: 750px) {
+  .content-scaler { transform: scale(0.55); }
+}
+
+@media (max-width: 600px) {
+  .content-scaler { transform: scale(0.45); }
+}
+
+/*  folder scaling  */
+
+.ui-scaler {
+  transform-origin: top left;
+  width: fit-content;
+  height: fit-content;
+}
+
+
+@media (max-width: 1500px) {
+  .ui-scaler { transform: scale(0.95); }
+}
+
+@media (max-width: 1300px) {
+  .ui-scaler { transform: scale(0.85); }
+}
+
+@media (max-width: 1100px) {
+  .ui-scaler { transform: scale(0.75); }
+}
+
+@media (max-width: 900px) {
+  .ui-scaler { transform: scale(0.65); }
+}
+
+@media (max-width: 750px) {
+  .ui-scaler { transform: scale(0.55); }
+}
+
+@media (max-width: 600px) {
+  .ui-scaler { transform: scale(0.45); }
+}
+
+/* MOBILE VERSION */
+
+@media (max-width: 600px) {
+  .folder-tab {
+    transform: scale(0.8);
+    margin-right: 10px;
+  }
+
+  .folder-tab span {
+    font-size: 0.7rem;
+  }
+
+  #tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+}
+
+/* content */
+@media (max-width: 600px) {
+  #page {
+    width: 90vw;
+    height: auto;
+    padding: 16px;
+    border-radius: 20px;
+  }
+
+  .content-scaler {
+    transform: scale(0.8); 
+  }
+}
+
+/* about me */
+@media (max-width: 600px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-avatar {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto;
+  }
+
+  .about-text h2 {
+    font-size: 1.4rem;
+  }
+}
+
+/* skills */
+@media (max-width: 600px) {
+  .skills-page .grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px;
+  }
+
+  .skills-page .grid div {
+    padding: 12px;
+    transform: scale(0.9);
+  }
+
+  .skills-page h2 {
+    text-align: center;
+    font-size: 1.6rem;
+  }
+}
+
+
+/* experiences */
+@media (max-width: 600px) {
+  .timeline {
+    padding-left: 1rem;
+  }
+
+  .timeline-item p {
+    font-size: 0.9rem;
+  }
+
+  .year {
+    font-size: 1rem;
+  }
+}
+
+
+
+/* contact info */
+@media (max-width: 600px) {
+  .contact-page h2 {
+    font-size: 1.8rem;
+  }
+
+  .contact-info span,
+  .contact-info a {
+    font-size: 1.4rem !important;
+  }
+}
+
+
