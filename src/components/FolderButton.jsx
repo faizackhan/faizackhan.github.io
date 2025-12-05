@@ -102,17 +102,37 @@ export default function FolderButton() {
                 </div>
               </div>
             )}
-
             {/* PROJECTS */}
             {activeTab === "Projects" && (
               <div className="page projects-page">
                 <h2 className="text-4xl mb-4 text-white">Projects</h2>
-                <ul>
-                  <li>Spotify Data Analysis - 2025</li>
-                  <li>Las Vegas F1 Comp Analysis - UofT Workshop 2024</li>
+
+                <ul className="space-y-2">
+                  <li>
+                    <a
+                      href="https://docs.google.com/presentation/d/1QKOeUSfeGXyQU73GX4RUZC13FOpFfh8xKm9WJOvH9Tw/edit?usp=sharing"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white-300 hover:underline"
+                    >
+                      Credit Risk Data Analysis – 2025
+                    </a>
+                  </li>
+
+                  <li>
+                  <a
+                      href="https://github.com/faizackhan/credit-risk-eda.git"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white hover:underline"
+                    >
+                      Las Vegas F1 Comp Analysis – UofT Workshop 2024
+                    </a>
+                  </li>
                 </ul>
               </div>
             )}
+
 
             {/* SKILLS */}
             {activeTab === "Skills" && (
