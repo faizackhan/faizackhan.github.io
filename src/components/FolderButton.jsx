@@ -32,6 +32,7 @@ import tapIcon from "../assets/icons/hand gestures/tap-1.svg";
 import flaskIcon from "../assets/icons/health/flask-round.svg";
 import puzzleIcon from "../assets/icons/interface/puzzle.svg";
 import puzzle2Icon from "../assets/icons/interface/puzzle-2.svg";
+import atIcon from "../assets/icons/interface/at-the-rate.svg";
 
 
 
@@ -55,6 +56,7 @@ const skills = [
   { name: "Next.js", icon: rocketIcon },
   { name: "Node.js", icon: trophyIcon },
   { name: "Vite", icon: chipIcon },
+  { name: "Git", icon: rocketIcon },
   { name: "Jupyter", icon: listIcon },
   { name: "Pandas", icon: spreadsheetIcon },
   { name: "NumPy", icon: textIcon},
@@ -214,26 +216,27 @@ export default function FolderButton({ theme }) {
             {/* SKILLS */}
             {activeTab === "Skills" && (
               <div className="text-1xl mb-2">
-                <h2 className="text-6xl mb-6 font-bold">Skills</h2>
+                <h2 className="text-2xl mb-6 font-bold">Skills</h2>
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
                   {skills.map((skill, index) => (
                       <div
                       key={index}
                       className="
+                        skill-card
                         flex flex-col items-center justify-center p-4
                         rounded-xl bg-white/10 backdrop-blur-md
-                        shadow-md hover:shadow-purple-400/40
-                       hover:bg-white/20 transition-all duration-300
-                      "
-                    >
+                        shadow-md
+                        transition-all duration-300
+                        "
+                      >
                       <img
                         src={skill.icon}
                         alt={skill.name}
                         className="skill-svg mb-2"
                         draggable={false}
                       />
-                      <p className="text-2xl">{skill.name}</p>
+                      <p className="text-2xl text-center w-full">{skill.name}</p>
                     </div>
                   ))}
               </div>
@@ -299,7 +302,7 @@ export default function FolderButton({ theme }) {
 
                   {/* Email */}
                   <a
-                    className="flex items-center gap-4 text-5xl hover:opacity-80 transition"
+                    className="flex items-center gap-1 text-5xl hover:opacity-80 transition"
                   >
                     <img
                         src={mailIcon}
@@ -307,7 +310,14 @@ export default function FolderButton({ theme }) {
                         className="w-8 h-8 project-svg"
                         draggable="false"
                       />
-                      <span>faizakhanc@gmail.com</span>
+                      <span>faizakhanc</span>
+                      <img
+                        src={atIcon}
+                        alt=""
+                        className="w-6 h-6 project-svg"
+                        draggable="false"
+                      />
+                      <span>gmail.com</span>
                   </a>
 
                   {/* Resume */}

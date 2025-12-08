@@ -264,9 +264,6 @@ body {
 }
 
 
-
-
-
 /*  ABOUT ME PAGE  */
 
 .about-container {
@@ -608,12 +605,9 @@ body {
   }
 }
 
-/* ============================= */
-/* LIGHT MODE – TABS + PAGES */
-/* ============================= */
+/* –----------- LIGHT MODE –----------- */
 
 .theme-light {
-  /* ---------- TAB COLORS ---------- */
   --tab1: #fcadde;
   --tab2: #ffadb4;
   --tab3: #ffd0a2;
@@ -632,14 +626,12 @@ body {
   --tab4-selected: #fbd89e;
   --tab5-selected: #ffeeb5;
 
-  /* ---------- PAGE BACKGROUNDS ---------- */
   --page1: #f8a2d7a9;
   --page2: #ffa1a1a6;
   --page3: #ffd0a2be;
   --page4: #fbd79eae;
   --page5: #fff2c5d7;
 
-  /* ---------- TEXT COLORS ---------- */
   --tabfont1: #1a1a1a;
   --tabfont2: #1a1a1a;
   --tabfont3: #1a1a1a;
@@ -647,9 +639,7 @@ body {
   --tabfont5: #1a1a1a;
 }
 
-/* ============================= */
-/* LIGHT MODE – PROJECT CARDS */
-/* ============================= */
+/* –----------- LIGHT MODE CARDS –----------- */
 
 .theme-light .projects-page li {
   background: #ffd2d2;
@@ -662,7 +652,6 @@ body {
   transform: scale(1.04);
 }
 
-/* Button text inside project card */
 .theme-light .projects-page li button {
   color: #1a1a1a;
 }
@@ -688,7 +677,6 @@ body {
   filter: none;
 }
 
-/* Local SVG icons (skills, projects, contact) */
 .skill-svg {
   width: 3rem;
   height: 3rem;
@@ -696,20 +684,46 @@ body {
   transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-/* Hover effect (cute) */
 .skill-svg:hover {
   transform: scale(1.1);
 }
 
-/* Dark mode → white icons */
 .theme-dark .skill-svg {
   filter: brightness(0) invert(1);
 }
 
-/* Light mode → original icon color */
 .theme-light .skill-svg {
   filter: none;
 }
+
+/* –----------- SKILL CARD STYLES –----------- */
+.skill-card {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+/* ---------- DARK MODE ---------- */
+.theme-dark .skill-card {
+  box-shadow: 0 2px 8px rgba(96, 165, 250, 0.15);
+}
+
+.theme-dark .skill-card:hover {
+  box-shadow: 0 14px 36px rgba(96, 165, 250, 0.55);
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-4px);
+}
+
+/* ---------- LIGHT MODE ---------- */
+.theme-light .skill-card {
+  box-shadow: 0 2px 8px rgba(90, 70, 40, 0.15);
+}
+
+.theme-light .skill-card:hover {
+  box-shadow: 0 14px 32px rgba(90, 70, 40, 0.45);
+  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(-4px);
+}
+
+
 
 
 
