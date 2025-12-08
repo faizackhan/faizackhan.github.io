@@ -250,10 +250,20 @@ body {
   top: 10px;
   left: 1px;
   padding: 30px;
-  
+
   border-radius: 0px 40px 40px 40px; 
   box-shadow: 20px 20px 20px #23032c59;
+
+  display: flex;   
+  flex-direction: column;    
 }
+
+.page {
+  flex: 1;
+  min-height: 0;
+}
+
+
 
 
 
@@ -315,23 +325,26 @@ body {
   margin-bottom: 1rem;
 }
 
-.projects-page ul {
-  font-size: 2.0rem;
-  list-style: none;
-  padding: 0;
-}
-
 .projects-page li {
   background: rgba(61, 100, 255, 0.581);
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 2rem;
   margin-bottom: 0.5rem;
-  border-radius: 8px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-radius: 10px;
   transition: transform 0.2s ease;
 }
 
 .projects-page li:hover {
   transform: scale(1.03);
 }
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+}
+
+
 
 /*  SKILLS PAGE  */
 
@@ -430,19 +443,14 @@ body {
   width: 100%;
 }
 
-/* scale of ui */
-
-
-#page {
-  overflow: hidden; 
-  position: relative;
-}
-
 .content-scaler {
-  transform-origin: top left;
-  width: 100%;
-  height: 100%;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 8px;
 }
+
+
 
 @media (max-width: 1500px) {
   .content-scaler { transform: scale(0.95); }
@@ -525,7 +533,7 @@ body {
   #page {
     width: 90vw;
     height: auto;
-    padding: 16px;
+    padding: 5px;
     border-radius: 20px;
   }
 

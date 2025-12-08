@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import "./FolderButton.css";
 import avatar from "../assets/avatar.png";
+import DraggableModal from "./DraggableModal";
+import creditRiskImg from "../assets/project-images/creditRiskProject.png";
+import smartAirImg from "../assets/project-images/SmartAirProject.png";
+import f1Img from "../assets/project-images/F1Project.png";
+
 
 
 
@@ -34,6 +39,34 @@ const skills = [
   { name: "React", icon: <SiReact /> }
 ];
 
+const projects = [
+  {
+    id: "creditRiskProject",
+    title: "Credit Risk Data Analysis",
+    image: creditRiskImg,
+    description:
+      "Exploratory data analysis on LendingClub loans, focusing on default risk and borrower behavior.",
+    link: "https://github.com/faizackhan/credit-risk-eda",
+  },
+  {
+    id: "SmartAirProject",
+    title: "Smart-Air: CSCBO7 Software Design Project",
+    image: smartAirImg,
+    description:
+      "Android + Firebase app for asthma management with role-based dashboards and PDF report export.",
+    link: "https://github.com/faizackhan/smart-air",
+  },
+  {
+    id: "F1Project",
+    title: "Las Vegas F1 Comp Analysis",
+    image: f1Img,
+    description:
+      "Comparative data analysis of Las Vegas F1 performance metrics presented in a workshop setting.",
+    link: "https://docs.google.com/presentation/d/1QKOeUSfeGXyQU73GX4RUZC13FOpFfh8xKm9WJOvH9Tw",
+  },
+];
+
+
 export default function FolderButton() {
   const [activeTab, setActiveTab] = useState("About Me");
 
@@ -60,6 +93,8 @@ export default function FolderButton() {
   };
 
   const tabs = ["About Me", "Projects", "Skills", "Experience", "Contact"];
+
+  const [activeProject, setActiveProject] = useState(null);
 
   return (
     <div className="ui-scaler"> 
@@ -114,42 +149,19 @@ export default function FolderButton() {
                 <h2 className="text-4xl mb-4 text-white">Projects</h2>
 
                 <ul className="space-y-2">
-                  <li>
-                    <a
-                      href="https://github.com/faizackhan/credit-risk-eda/blob/main/README.md"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white-300 hover:underline"
-                    >
-                      Credit Risk Data Analysis – 2025
-                    </a>
-                  </li>
-
-                  <li>
-                  <a
-                      href="https://github.com/faizackhan/smart-air/blob/main/README.md"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white hover:underline"
-                    >
-                      Smart-Air: CSCBO7 Software Design Project – 2025
-                    </a>
-                  </li>
-
-                  <li>
-                  <a
-                      href="https://docs.google.com/presentation/d/1QKOeUSfeGXyQU73GX4RUZC13FOpFfh8xKm9WJOvH9Tw/edit?usp=sharing"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white hover:underline"
-                    >
-                      Las Vegas F1 Comp Analysis – UofT Workshop 2024
-                    </a>
-                  </li>
+                  {projects.map((project) => (
+                    <li key={project.id}>
+                      <button
+                        onClick={() => setActiveProject(project)}
+                        className="hover:underline text-left"
+                      >
+                        {project.title}
+                      </button>
+                    </li>
+                    ))}
                 </ul>
               </div>
             )}
-
 
             {/* SKILLS */}
             {activeTab === "Skills" && (
@@ -218,10 +230,33 @@ export default function FolderButton() {
                 </div>
               </div>
             )}
+
+            {activeProject && (
+              <DraggableModal
+                title={activeProject.title}
+                onClose={() => setActiveProject(null)}
+              >
+                {activeProject.image && (
+                  <img
+                  src={activeProject.image}
+                  alt={activeProject.title}
+                  className="w-full rounded-lg mb-4 border border-white/20"
+                  />
+                )}
+                <p>{activeProject.description}</p>
+
+                <a
+                  href={activeProject.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline mt-2 inline-block"
+                >
+                  View project →
+                </a>
+            </DraggableModal>
+            )}
           </div> 
-
         </div> 
-
       </div> 
     </div>
   );
