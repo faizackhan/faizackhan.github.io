@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import "./FolderButton.css";
-import avatar from "../assets/avatar.png"; 
-import CatCorner from "./CatCorner";
-import { HiSun, HiMoon } from "react-icons/hi";
+import avatar from "../assets/avatar.png";
 
 
 
@@ -100,7 +98,11 @@ export default function FolderButton() {
                   <div className="about-text">
                     <h2>About Me</h2>
                     <p>
-                      Hi! I’m <b>Faiza Khan</b>, a student at the University of Toronto...
+                      Hi! I’m <b>Faiza Khan</b>, I'm a statistics specialist student at University of Toronto and an aspiring
+                      data scientist. I have a passion for analyzing data and presenting it in a digestible format, as well as uncovering meaning insights from complex datasets.
+                    </p>
+                    <p>
+                      Beyond academics, I enjoy creating music, baking, and indulging in creative pursuits such as web dev, and painting.
                     </p>
                   </div>
                 </div>
@@ -214,10 +216,8 @@ export default function FolderButton() {
                     </a>
                   </p>
                 </div>
-                <CatCorner />
               </div>
             )}
-
           </div> 
 
         </div> 
