@@ -131,7 +131,7 @@ export default function FolderButton({ theme }) {
           }}
         >
 
-          {/* CONTENT SCALER — keeps content inside the box */}
+          {/* CONTENT SCALER*/}
           <div className="content-scaler">
 
             {/* ABOUT ME */}
@@ -253,7 +253,7 @@ export default function FolderButton({ theme }) {
                     <MdAttachEmail className="text-6xl" />
                       <span>faizakhanc@gmail.com</span>
                   </a>
-                  
+
                 </div>
               </div>
             )}

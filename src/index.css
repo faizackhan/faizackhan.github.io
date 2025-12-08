@@ -9,10 +9,6 @@
 
 @import "tailwindcss";
 
-/* ============================= */
-/* GLOBAL THEME TRANSITION */
-/* ============================= */
-
 .theme-dark,
 .theme-light {
   transition:
@@ -58,8 +54,6 @@ body {
   transition: opacity 0.25s ease;
 }
 
-
-
 .cat {
   position: fixed;
   bottom: 20px;
@@ -90,21 +84,10 @@ body {
   100% { background-position: 100%; }
 }
 
-/* ============================= */
-/* LIGHT MODE TEXT OVERRIDES */
-/* ============================= */
-
-
-/* Optional: links look nicer */
-
 
 .theme-light{
   color: #301d02;
 }
-
-/* ============================= */
-/* BACKGROUND CROSSFADE */
-/* ============================= */
 
 .theme-dark .content--canvas {
   opacity: 1;
@@ -127,9 +110,6 @@ body {
   transition: opacity 0.7s ease;
 }
 
-/* ============================= */
-/* FORCE THEME TEXT COLOR */
-/* ============================= */
 
 .theme-dark,
 .theme-dark * {
@@ -141,7 +121,6 @@ body {
   color: var(--text);
 }
 
-/* Override Tailwind text utilities */
 .theme-light [class*="text-"] {
   color: var(--text);
 }
@@ -150,10 +129,6 @@ body {
 .theme-light #page * {
   color: var(--text);
 }
-
-/* ============================= */
-/* DARK MODE OVERLAY */
-/* ============================= */
 
 .dark-overlay {
   background: linear-gradient(
@@ -173,10 +148,6 @@ body {
 .theme-light .dark-overlay {
   opacity: 0;
 }
-
-/* ============================= */
-/* DRAGGABLE PROJECT MODAL */
-/* ============================= */
 
 .modal-dark {
   color: #ffffff;
