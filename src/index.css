@@ -38,15 +38,24 @@ body {
   overflow-x: hidden;
   background: transparent;
   /* color: white; */
-  color: var(--text);
 }
 
-.theme-dark {
-  --text: #ffffff;
+.dark-overlay {
+  background: linear-gradient(
+    to bottom right,
+    rgba(10, 7, 47, 0.6),
+    rgba(59, 8, 60, 0.6)
+  );
+  transition: opacity 0.6s ease;
 }
 
-.theme-light {
-  --text: #291801;
+.light-overlay {
+  background: linear-gradient(
+    to bottom right,
+    rgba(217, 214, 255, 0.4),
+    rgba(253, 116, 255, 0.4)
+  );
+  transition: opacity 0.6s ease;
 }
 
 .theme-dark .ui-scaler,
@@ -70,95 +79,25 @@ body {
   z-index: 50;
 }
 
-.background--custom {
-  position: absolute;
-  inset: 0;
-
-  background: linear-gradient(90deg, #fff4a9, #ffc8ee, #d9e2ff, #f3c8ff);
-  background-size: 300% 300%;
-  animation: gradient 10s alternate infinite;
-}
-
-@keyframes gradient {
-  0% { background-position: 0%; }
-  100% { background-position: 100%; }
-}
-
-
-.theme-light{
-  color: #301d02;
-}
-
-.theme-dark .content--canvas {
-  opacity: 1;
-}
-
-.theme-dark .background--custom {
-  opacity: 0;
-}
-
-.theme-light .content--canvas {
-  opacity: 0;
-}
-
-.theme-light .background--custom {
-  opacity: 1;
-}
-
 .content--canvas,
 .background--custom {
   transition: opacity 0.7s ease;
-}
-
-
-.theme-dark,
-.theme-dark * {
-  color: var(--text);
-}
-
-.theme-light,
-.theme-light * {
-  color: var(--text);
-}
-
-.theme-light [class*="text-"] {
-  color: var(--text);
-}
-
-.theme-light #page,
-.theme-light #page * {
-  color: var(--text);
-}
-
-.dark-overlay {
-  background: linear-gradient(
-    to bottom right,
-    rgba(23, 20, 58, 0.6),
-    rgba(77, 26, 78, 0.6)
-  );
-  transition: opacity 0.6s ease;
 }
 
 /* visible only in dark mode */
 .theme-dark .dark-overlay {
   opacity: 1;
 }
+.theme-dark .light-overlay {
+  opacity: 0;
+}
 
 /* hidden in light mode */
 .theme-light .dark-overlay {
   opacity: 0;
 }
-
-.modal-dark {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.modal-light {
-  color: #2b1a05;
-  background: rgba(255, 255, 255, 0.319);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+.theme-light .light-overlay {
+  opacity: 1;
 }
 
 .theme-dark .contact-info a:hover svg {
@@ -168,4 +107,3 @@ body {
 .theme-light .contact-info a:hover svg {
   opacity: 0.8;
 }
-

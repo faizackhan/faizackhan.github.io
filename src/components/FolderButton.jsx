@@ -180,7 +180,7 @@ export default function FolderButton({ theme }) {
             {/* PROJECTS */}
             {activeTab === "Projects" && (
               <div className="page projects-page">
-                <h2 className="text-4xl mb-4 text-white">Projects</h2>
+                <h2 className="text-4xl mb-4">Projects</h2>
 
                 <ul className="space-y-2">
                   {projects.map((project) => (

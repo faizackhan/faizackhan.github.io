@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import FolderButton from "./components/FolderButton";
 import ThemeToggle from "./components/ThemeToggle";
 import CatCorner from "./components/CatCorner";
@@ -6,17 +6,19 @@ import CatCorner from "./components/CatCorner";
 export default function App() {
   const [theme, setTheme] = useState("dark");
 
+  useEffect(() => {
+    document.body.classList.remove("theme-dark", "theme-light");
+    document.body.classList.add(theme === "light" ? "theme-light" : "theme-dark");
+  }, [theme]);
+
   return (
-    <div
-      className={`relative w-screen h-screen overflow-hidden ${
-        theme === "light" ? "theme-light" : "theme-dark"
-      }`}
-    >
-      {/* DARK MODE BACKGROUND */}
+    <div className="relative w-screen h-screen overflow-hidden">
+
+      {/* DARK MODE BASE */}
       <div className="content--canvas absolute inset-0 z-0 pointer-events-none" />
 
-      {/* LIGHT MODE BACKGROUND */}
-      <div className="background--custom absolute inset-0 z-0 pointer-events-none" />
+      {/* LIGHT MODE BASE */}
+      <div className="light-overlay absolute inset-0 z-0 pointer-events-none" />
 
       {/* DARK MODE OVERLAY */}
       <div className="dark-overlay absolute inset-0 z-5 pointer-events-none" />
@@ -34,7 +36,6 @@ export default function App() {
       <div className="fixed bottom-3 right-4 z-10 text-sm opacity-70 select-none">
         © 2025 Faiza Khan
       </div>
-
     </div>
   );
 }

@@ -195,11 +195,13 @@ body {
 }
 
 
-.folder-tab.selected,
-.folder-tab:hover {
+.theme-light .folder-tab.selected{
   z-index: 3;
-  color: #040000;
-  background-color: var(--tabSelectedColor);
+  color: #1b1402;
+}
+.theme-dark .folder-tab.selected {
+  z-index: 3;
+  color: #ffffff;
 }
 
 .folder-tab.selected::before,
@@ -279,8 +281,7 @@ body {
 .about-avatar {
   width: 400px;             
   height: 400px;
-  margin-left: 20px;
-  margin-top: 100px;            
+  margin-left: 20px;          
   object-fit: cover;        
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -608,29 +609,29 @@ body {
 /* –----------- LIGHT MODE –----------- */
 
 .theme-light {
-  --tab1: #fcadde;
-  --tab2: #ffadb4;
-  --tab3: #ffd0a2;
-  --tab4: #fbd89e;
-  --tab5: #ffeeb5;
+  --tab1: #be97c7fa;
+  --tab2: #ffa3c6;
+  --tab3: #ff89b6;
+  --tab4: #ff62c5;
+  --tab5: #ad459f;
 
-  --tab1-hover: #a865ca;
-  --tab2-hover: #a865ca;
-  --tab3-hover: #a865ca;
-  --tab4-hover: #a865ca;
-  --tab5-hover: #a865ca;
+  --tab1-hover: #963eb9fa;
+  --tab2-hover: #963eb9fa;
+  --tab3-hover: #963eb9fa;
+  --tab4-hover: #963eb9fa;
+  --tab5-hover: #963eb9fa;
 
-  --tab1-selected: #fcadde;
-  --tab2-selected: #ffadb4;
-  --tab3-selected: #ffd0a2;
-  --tab4-selected: #fbd89e;
-  --tab5-selected: #ffeeb5;
+  --tab1-selected: #97a5c7fa;
+  --tab2-selected: #ffa3c6;
+  --tab3-selected: #ff89b6;
+  --tab4-selected: #ff62a6;
+  --tab5-selected: #cf34bb;
 
-  --page1: #f8a2d7a9;
-  --page2: #ffa1a1a6;
-  --page3: #ffd0a2be;
-  --page4: #fbd79eae;
-  --page5: #fff2c5d7;
+  --page1: #ffcaeb51;
+  --page2: #ffa3c6b4;
+  --page3: #ff89b696;
+  --page4: #ff62a682;
+  --page5: #cf34ba7d;
 
   --tabfont1: #1a1a1a;
   --tabfont2: #1a1a1a;
@@ -722,6 +723,35 @@ body {
   background: rgba(255, 255, 255, 0.35);
   transform: translateY(-4px);
 }
+
+.theme-dark .draggable-modal {
+  color: #ffffff;
+}
+
+.theme-light .draggable-modal {
+  color: #2b1a05;
+}
+
+/* TEXT COLOR TOKENS */
+.theme-dark {
+  --content-text: #ffffff;
+  --content-muted: #cbd5ff;
+}
+
+.theme-light {
+  --content-text: #1a1a1a;
+  --content-muted: #3b2a1a;
+}
+
+/* ALL TAB CONTENT TEXT */
+#page,
+#page * {
+  color: var(--content-text);
+}
+
+
+
+
 
 
 
