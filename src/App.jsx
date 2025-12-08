@@ -7,23 +7,19 @@ export default function App() {
   const [theme, setTheme] = useState("dark");
 
   return (
-    <div className={`relative w-screen h-screen overflow-hidden ${ 
-      theme === "light" ? "theme-light" : "theme-dark"
+    <div
+      className={`relative w-screen h-screen overflow-hidden ${
+        theme === "light" ? "theme-light" : "theme-dark"
       }`}
     >
+      {/* DARK MODE BACKGROUND */}
+      <div className="content--canvas absolute inset-0 z-0 pointer-events-none" />
 
-      {/* DARK MODE BACKGROUND (JS / CSS) */}
-      {theme === "dark" && (
-        <>
-          <div className="content--canvas absolute inset-0 z-0 pointer-events-none" />
-          <div className="absolute inset-0 bg-linear-to-br from-[#17143a]/60 to-[#4d1a4e]/60 z-5 pointer-events-none" />
-        </>
-      )}
+      {/* LIGHT MODE BACKGROUND */}
+      <div className="background--custom absolute inset-0 z-0 pointer-events-none" />
 
-      {/* LIGHT MODE BACKGROUND (HTML-style animated gradient) */}
-      {theme === "light" && (
-        <div className="background--custom pointer-events-none z-0" />
-      )}
+      {/* DARK MODE OVERLAY */}
+      <div className="dark-overlay absolute inset-0 z-5 pointer-events-none" />
 
       {/* UI CONTROLS */}
       <ThemeToggle theme={theme} setTheme={setTheme} />
@@ -31,9 +27,8 @@ export default function App() {
 
       {/* MAIN UI */}
       <div className="relative z-10 flex items-center justify-center h-full">
-        <FolderButton />
+        <FolderButton theme={theme} />
       </div>
-
     </div>
   );
 }

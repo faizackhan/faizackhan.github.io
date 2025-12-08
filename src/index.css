@@ -9,6 +9,18 @@
 
 @import "tailwindcss";
 
+/* ============================= */
+/* GLOBAL THEME TRANSITION */
+/* ============================= */
+
+.theme-dark,
+.theme-light {
+  transition:
+    background-color 0.5s ease,
+    color 0.4s ease;
+}
+
+
 
 html, body, #root {
   height: 100%;
@@ -32,6 +44,20 @@ body {
   /* color: white; */
   color: var(--text);
 }
+
+.theme-dark {
+  --text: #ffffff;
+}
+
+.theme-light {
+  --text: #291801;
+}
+
+.theme-dark .ui-scaler,
+.theme-light .ui-scaler {
+  transition: opacity 0.25s ease;
+}
+
 
 
 .cat {
@@ -70,8 +96,96 @@ body {
 
 
 /* Optional: links look nicer */
-.theme-light #page,
-.theme-light #page * {
-  color: #291801;
+
+
+.theme-light{
+  color: #301d02;
 }
 
+/* ============================= */
+/* BACKGROUND CROSSFADE */
+/* ============================= */
+
+.theme-dark .content--canvas {
+  opacity: 1;
+}
+
+.theme-dark .background--custom {
+  opacity: 0;
+}
+
+.theme-light .content--canvas {
+  opacity: 0;
+}
+
+.theme-light .background--custom {
+  opacity: 1;
+}
+
+.content--canvas,
+.background--custom {
+  transition: opacity 0.7s ease;
+}
+
+/* ============================= */
+/* FORCE THEME TEXT COLOR */
+/* ============================= */
+
+.theme-dark,
+.theme-dark * {
+  color: var(--text);
+}
+
+.theme-light,
+.theme-light * {
+  color: var(--text);
+}
+
+/* Override Tailwind text utilities */
+.theme-light [class*="text-"] {
+  color: var(--text);
+}
+
+.theme-light #page,
+.theme-light #page * {
+  color: var(--text);
+}
+
+/* ============================= */
+/* DARK MODE OVERLAY */
+/* ============================= */
+
+.dark-overlay {
+  background: linear-gradient(
+    to bottom right,
+    rgba(23, 20, 58, 0.6),
+    rgba(77, 26, 78, 0.6)
+  );
+  transition: opacity 0.6s ease;
+}
+
+/* visible only in dark mode */
+.theme-dark .dark-overlay {
+  opacity: 1;
+}
+
+/* hidden in light mode */
+.theme-light .dark-overlay {
+  opacity: 0;
+}
+
+/* ============================= */
+/* DRAGGABLE PROJECT MODAL */
+/* ============================= */
+
+.modal-dark {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modal-light {
+  color: #2b1a05;
+  background: rgba(255, 255, 255, 0.319);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}

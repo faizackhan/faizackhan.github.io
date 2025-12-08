@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
-export default function DraggableModal({ title, children, onClose }) {
+export default function DraggableModal({ title, children, onClose, theme }) {
   const [position, setPosition] = useState({ x: 200, y: 120 });
   const [dragging, setDragging] = useState(false);
   const offset = useRef({ x: 0, y: 0 });
@@ -32,15 +32,18 @@ export default function DraggableModal({ title, children, onClose }) {
     >
       <div
       style={{ left: position.x, top: position.y }}
-      className="
-        absolute
-        w-[500px]
-        max-h-[150vh]
-        rounded-xl
-       bg-white/10 backdrop-blur-lg
-        shadow-xl border border-white/20
-      "
+        className={`
+          draggable-modal
+          ${theme === "dark" ? "modal-dark" : "modal-light"}
+          absolute
+          w-[500px]
+          rounded-xl
+          backdrop-blur-lg
+          shadow-xl
+        `}
       >
+
+
 
         {/* DRAG HANDLE */}
         <div

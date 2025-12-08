@@ -67,7 +67,7 @@ const projects = [
 ];
 
 
-export default function FolderButton() {
+export default function FolderButton({ theme }) {
   const [activeTab, setActiveTab] = useState("About Me");
 
   const getPageColor = () => {
@@ -234,6 +234,7 @@ export default function FolderButton() {
             {activeProject && (
               <DraggableModal
                 title={activeProject.title}
+                theme={theme}
                 onClose={() => setActiveProject(null)}
               >
                 {activeProject.image && (
