@@ -680,3 +680,37 @@ body {
   color: #37250497;
 }
 
+.theme-dark .project-svg {
+  filter: brightness(0) invert(1);
+}
+
+.theme-light .project-svg {
+  filter: none;
+}
+
+/* Local SVG icons (skills, projects, contact) */
+.skill-svg {
+  width: 3rem;
+  height: 3rem;
+  filter: brightness(0) invert(1);
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+/* Hover effect (cute) */
+.skill-svg:hover {
+  transform: scale(1.1);
+}
+
+/* Dark mode → white icons */
+.theme-dark .skill-svg {
+  filter: brightness(0) invert(1);
+}
+
+/* Light mode → original icon color */
+.theme-light .skill-svg {
+  filter: none;
+}
+
+
+
+

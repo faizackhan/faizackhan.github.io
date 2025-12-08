@@ -29,6 +29,12 @@ export default function App() {
       <div className="relative z-10 flex items-center justify-center h-full">
         <FolderButton theme={theme} />
       </div>
+
+      {/* COPYRIGHT */}
+      <div className="fixed bottom-3 right-4 z-10 text-sm opacity-70 select-none">
+        © 2025 Faiza Khan
+      </div>
+
     </div>
   );
 }
