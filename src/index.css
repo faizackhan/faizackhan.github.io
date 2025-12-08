@@ -50,23 +50,28 @@ body {
   z-index: 50;
 }
 
+.background--custom {
+  position: absolute;
+  inset: 0;
 
-/* ===== THEME VARIABLES ===== */
-
-/* Default = DARK MODE */
-:root {
-  --text: #ffffff;
-  --link: #9db2ff;
-
-  --card-bg: rgba(255, 255, 255, 0.12);
-  --card-border: rgba(255, 255, 255, 0.18);
+  background: linear-gradient(90deg, #fff4a9, #ffc8ee, #d9e2ff, #f3c8ff);
+  background-size: 300% 300%;
+  animation: gradient 10s alternate infinite;
 }
 
-/* LIGHT MODE */
-.light {
-  --text: #1b1b1f;
-  --link: #4338ca;
-
-  --card-bg: rgba(255, 255, 255, 0.9);
-  --card-border: rgba(0, 0, 0, 0.1);
+@keyframes gradient {
+  0% { background-position: 0%; }
+  100% { background-position: 100%; }
 }
+
+/* ============================= */
+/* LIGHT MODE TEXT OVERRIDES */
+/* ============================= */
+
+
+/* Optional: links look nicer */
+.theme-light #page,
+.theme-light #page * {
+  color: #291801;
+}
+

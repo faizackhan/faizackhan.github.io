@@ -395,8 +395,8 @@ body {
 
 .experience-page .timeline {
   margin-top: 1.5rem;
-  border-left: 2px solid rgba(255, 255, 255, 0.4);
-  padding-left: 1.5rem;
+  border-left: 1px solid #d2dbf453;
+  padding-left: 2rem;
 }
 
 .experience-page .timeline-item {
@@ -407,8 +407,8 @@ body {
 .experience-page .timeline-item::before {
   content: "●";
   position: absolute;
-  left: -1rem;
-  color: #94aaff;
+  left: -1.5rem;
+  color: #b9bae0;
 }
 
 .experience-page .year {
@@ -607,5 +607,79 @@ body {
     font-size: 1.4rem !important;
   }
 }
+
+/* ============================= */
+/* LIGHT MODE – TABS + PAGES */
+/* ============================= */
+
+.theme-light {
+  /* ---------- TAB COLORS ---------- */
+  --tab1: #fcadde;
+  --tab2: #ffadb4;
+  --tab3: #ffd0a2;
+  --tab4: #fbd89e;
+  --tab5: #ffeeb5;
+
+  --tab1-hover: #a865ca;
+  --tab2-hover: #a865ca;
+  --tab3-hover: #a865ca;
+  --tab4-hover: #a865ca;
+  --tab5-hover: #a865ca;
+
+  --tab1-selected: #fcadde;
+  --tab2-selected: #ffadb4;
+  --tab3-selected: #ffd0a2;
+  --tab4-selected: #fbd89e;
+  --tab5-selected: #ffeeb5;
+
+  /* ---------- PAGE BACKGROUNDS ---------- */
+  --page1: #f8a2d7a9;
+  --page2: #ffa1a1a6;
+  --page3: #ffd0a2be;
+  --page4: #fbd79eae;
+  --page5: #fff2c5d7;
+
+  /* ---------- TEXT COLORS ---------- */
+  --tabfont1: #1a1a1a;
+  --tabfont2: #1a1a1a;
+  --tabfont3: #1a1a1a;
+  --tabfont4: #1a1a1a;
+  --tabfont5: #1a1a1a;
+}
+
+/* ============================= */
+/* LIGHT MODE – PROJECT CARDS */
+/* ============================= */
+
+.theme-light .projects-page li {
+  background: #ffd2d2;
+  color: #1a1a1a;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.theme-light .projects-page li:hover {
+  background: #ffd2d2;
+  transform: scale(1.04);
+}
+
+/* Button text inside project card */
+.theme-light .projects-page li button {
+  color: #1a1a1a;
+}
+
+.theme-light .experience-page .timeline {
+  margin-top: 1.5rem;
+  border-left: 0.5px solid #37250497;
+  padding-left: 2rem;
+}
+
+.theme-light .experience-page .timeline-item::before {
+  content: "●";
+  position: absolute;
+  left: -1.5rem;
+  color: #37250497;
+}
+
+
 
 

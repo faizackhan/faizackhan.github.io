@@ -193,11 +193,11 @@ export default function FolderButton() {
                 <h2 className="text-4xl mb-4">Experience</h2>
                 <div className="timeline">
                   <div className="timeline-item">
-                    <span className="year">2024</span>
+                    <span className="year ">2024</span>
                     <p>VP of Quantitative AI & Fintech Society - UofT</p>
                   </div>
                   <div className="timeline-item">
-                    <span className="year">2025</span>
+                    <span className="year"> 2025</span>
                     <p>Finance Member of AMACSS - UofT</p>
                   </div>
                 </div>
