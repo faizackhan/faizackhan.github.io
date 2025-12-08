@@ -5,6 +5,12 @@ import DraggableModal from "./DraggableModal";
 import creditRiskImg from "../assets/project-images/creditRiskProject.png";
 import smartAirImg from "../assets/project-images/SmartAirProject.png";
 import f1Img from "../assets/project-images/F1Project.png";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { TbCloudHeart } from "react-icons/tb";
+import { VscGraph } from "react-icons/vsc";
+import { BsCreditCard2FrontFill } from "react-icons/bs";
+import { MdAttachEmail } from "react-icons/md";
+
 
 
 
@@ -43,6 +49,7 @@ const projects = [
   {
     id: "creditRiskProject",
     title: "Credit Risk Data Analysis",
+    icon: <BsCreditCard2FrontFill />,
     image: creditRiskImg,
     description:
       "Exploratory data analysis on LendingClub loans, focusing on default risk and borrower behavior.",
@@ -51,6 +58,7 @@ const projects = [
   {
     id: "SmartAirProject",
     title: "Smart-Air: CSCBO7 Software Design Project",
+    icon: <TbCloudHeart />,
     image: smartAirImg,
     description:
       "Android + Firebase app for asthma management with role-based dashboards and PDF report export.",
@@ -59,6 +67,7 @@ const projects = [
   {
     id: "F1Project",
     title: "Las Vegas F1 Comp Analysis",
+    icon: <VscGraph />,
     image: f1Img,
     description:
       "Comparative data analysis of Las Vegas F1 performance metrics presented in a workshop setting.",
@@ -155,7 +164,11 @@ export default function FolderButton({ theme }) {
                         onClick={() => setActiveProject(project)}
                         className="hover:underline text-left"
                       >
+                        <span className="flex items-center gap-3">
                         {project.title}
+                        <span className="text-3xl">{project.icon}</span>
+                        </span>
+
                       </button>
                     </li>
                     ))}
@@ -206,30 +219,45 @@ export default function FolderButton({ theme }) {
 
             {/* CONTACT */}
             {activeTab === "Contact" && (
-              <div className="page contact-page p-8 text-white">
-                <h2 className="text-4xl mb-6 font-bold">Contact Me</h2>
+                <div className="page contact-page p-8">
+                <h2 className="text-4xl mb-10 font-bold">Contact Me</h2>
 
-                <div className="contact-info space-y-4 text-xl">
-                  <span className="text-blue-200 text-4xl">Email: faizakhanc@gmail.com</span>
+                <div className="contact-info flex flex-col gap-8 items-center">
 
-                  <p>
-                    <a href="https://github.com/faizackhan"
-                      className="text-blue-300 text-4xl hover:text-pink-200 transition"
-                      target="_blank">
-                      Github →
-                    </a>
-                  </p>
+                  {/* GitHub */}
+                  <a
+                    href="https://github.com/faizackhan"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 text-5xl hover:opacity-80 transition"
+                  >
+                    <FaGithub className="text-6xl" />
+                      <span>GitHub</span>
+                  </a>
 
-                  <p>
-                    <a href="https://www.linkedin.com/in/faiza-khanc/"
-                      className="text-blue-300 text-4xl hover:text-pink-200 transition"
-                      target="_blank">
-                      LinkedIn →
-                    </a>
-                  </p>
+                  {/* LinkedIn */}
+                  <a
+                    href="https://www.linkedin.com/in/faiza-khanc/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 text-5xl hover:opacity-80 transition"
+                  >
+                    <FaLinkedin className="text-6xl" />
+                      <span>LinkedIn</span>
+                  </a>
+
+                  {/* Email */}
+                  <a
+                    className="flex items-center gap-4 text-5xl hover:opacity-80 transition"
+                  >
+                    <MdAttachEmail className="text-6xl" />
+                      <span>faizakhanc@gmail.com</span>
+                  </a>
+                  
                 </div>
               </div>
             )}
+
 
             {activeProject && (
               <DraggableModal

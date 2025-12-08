@@ -189,3 +189,12 @@ body {
   background: rgba(255, 255, 255, 0.319);
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
+
+.theme-dark .contact-info a:hover svg {
+  opacity: 0.85;
+}
+
+.theme-light .contact-info a:hover svg {
+  opacity: 0.8;
+}
+
