@@ -220,7 +220,7 @@ export default function FolderButton({ theme }) {
             {/* CONTACT */}
             {activeTab === "Contact" && (
                 <div className="page contact-page p-8">
-                <h2 className="text-4xl mb-10 font-bold">Contact Me</h2>
+                <h2 className="text-4xl mb-10 font-bold">Contact Me!</h2>
 
                 <div className="contact-info flex flex-col gap-8 items-center">
 
