@@ -110,7 +110,7 @@ export default function FolderButton() {
                 <ul className="space-y-2">
                   <li>
                     <a
-                      href="https://docs.google.com/presentation/d/1QKOeUSfeGXyQU73GX4RUZC13FOpFfh8xKm9WJOvH9Tw/edit?usp=sharing"
+                      href="https://github.com/faizackhan/credit-risk-eda/blob/main/README.md"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-white-300 hover:underline"
@@ -121,7 +121,18 @@ export default function FolderButton() {
 
                   <li>
                   <a
-                      href="https://github.com/faizackhan/credit-risk-eda.git"
+                      href="https://github.com/faizackhan/smart-air/blob/main/README.md"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white hover:underline"
+                    >
+                      Smart-Air: CSCBO7 Software Design Project – 2025
+                    </a>
+                  </li>
+
+                  <li>
+                  <a
+                      href="https://docs.google.com/presentation/d/1QKOeUSfeGXyQU73GX4RUZC13FOpFfh8xKm9WJOvH9Tw/edit?usp=sharing"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-white hover:underline"

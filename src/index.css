@@ -1,18 +1,28 @@
+@font-face {
+  font-family: "Vividly";
+  src: url("/fonts/Vividly-Regular.woff2") format("woff2"),
+       url("/fonts/Vividly-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import "tailwindcss";
+
 
 html, body, #root {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: "Winky Rough", sans-serif;
+  font-family: "Vividly", sans-serif;
 }
 
 .font-winky-sans {
-  font-family: "Winky Sans", sans-serif;
+  font-family: "Vividly", sans-serif;
 }
 
 .font-winky-rough {
-  font-family: "Winky Rough", sans-serif;
+  font-family: "Vividly", sans-serif;
 }
 
 
