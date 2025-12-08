@@ -29,7 +29,8 @@ html, body, #root {
 body {
   overflow-x: hidden;
   background: transparent;
-  color: white;
+  /* color: white; */
+  color: var(--text);
 }
 
 
@@ -47,4 +48,25 @@ body {
   transform: scale(8);
   transform-origin: bottom left;
   z-index: 50;
+}
+
+
+/* ===== THEME VARIABLES ===== */
+
+/* Default = DARK MODE */
+:root {
+  --text: #ffffff;
+  --link: #9db2ff;
+
+  --card-bg: rgba(255, 255, 255, 0.12);
+  --card-border: rgba(255, 255, 255, 0.18);
+}
+
+/* LIGHT MODE */
+.light {
+  --text: #1b1b1f;
+  --link: #4338ca;
+
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --card-border: rgba(0, 0, 0, 0.1);
 }

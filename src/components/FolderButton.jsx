@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./FolderButton.css";
 import avatar from "../assets/avatar.png"; 
 import CatCorner from "./CatCorner";
+import { HiSun, HiMoon } from "react-icons/hi";
+
 
 
 import {
@@ -62,7 +64,7 @@ export default function FolderButton() {
   const tabs = ["About Me", "Projects", "Skills", "Experience", "Contact"];
 
   return (
-    <div className="ui-scaler">  
+    <div className="ui-scaler"> 
       <div className="folder-container">
 
         {/* TABS */}
