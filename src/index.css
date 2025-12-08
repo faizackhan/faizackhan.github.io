@@ -31,3 +31,20 @@ body {
   background: transparent;
   color: white;
 }
+
+
+.cat {
+  position: fixed;
+  bottom: 20px;
+  left: 16px;
+
+  width: 32px;
+  height: 32px;
+
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+
+  transform: scale(8);
+  transform-origin: bottom left;
+  z-index: 50;
+}

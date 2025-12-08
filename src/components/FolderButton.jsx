@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./FolderButton.css";
 import avatar from "../assets/avatar.png"; 
+import CatCorner from "./CatCorner";
+
 
 import {
   SiReact, SiPython, SiC, SiCplusplus, SiJavascript, 
@@ -85,7 +87,7 @@ export default function FolderButton() {
           }}
         >
 
-          {/* ⭐ CONTENT SCALER — keeps content inside the box */}
+          {/* CONTENT SCALER — keeps content inside the box */}
           <div className="content-scaler">
 
             {/* ABOUT ME */}
@@ -147,8 +149,8 @@ export default function FolderButton() {
 
             {/* SKILLS */}
             {activeTab === "Skills" && (
-              <div className="page skills-page p-8 font-winky-sans">
-                <h2 className="text-4xl mb-6 text-white font-bold">Skills</h2>
+              <div className="text-1xl text-white mb-2">
+                <h2 className="text-6xl mb-6 text-white font-bold">Skills</h2>
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
                   {skills.map((skill, index) => (
@@ -159,10 +161,10 @@ export default function FolderButton() {
                                  shadow-md hover:shadow-purple-400/40 
                                  hover:bg-white/20 transition-all duration-300"
                     >
-                      <div className="text-5xl text-white mb-2">
+                      <div className="text-5xl text-white mb-1">
                         {skill.icon}
                       </div>
-                      <p className="text-sm text-white">{skill.name}</p>
+                      <p className="text-2xl text-white">{skill.name}</p>
                     </div>
                   ))}
                 </div>
@@ -192,11 +194,11 @@ export default function FolderButton() {
                 <h2 className="text-4xl mb-6 font-bold">Contact Me</h2>
 
                 <div className="contact-info space-y-4 text-xl">
-                  <span className="text-blue-200 text-3xl">Email: faizakhanc@gmail.com</span>
+                  <span className="text-blue-200 text-4xl">Email: faizakhanc@gmail.com</span>
 
                   <p>
                     <a href="https://github.com/faizackhan"
-                      className="text-blue-300 text-3xl hover:text-pink-200 transition"
+                      className="text-blue-300 text-4xl hover:text-pink-200 transition"
                       target="_blank">
                       Github →
                     </a>
@@ -204,12 +206,13 @@ export default function FolderButton() {
 
                   <p>
                     <a href="https://www.linkedin.com/in/faiza-khanc/"
-                      className="text-blue-300 text-3xl hover:text-pink-200 transition"
+                      className="text-blue-300 text-4xl hover:text-pink-200 transition"
                       target="_blank">
                       LinkedIn →
                     </a>
                   </p>
                 </div>
+                <CatCorner />
               </div>
             )}
 

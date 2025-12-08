@@ -310,11 +310,6 @@ body {
 
 /*  PROJECTS PAGE  */
 
-.projects-page {
-  color: #ffffff;
-  font-size: 2.0rem;
-}
-
 .projects-page h2 {
   color: #ffffff;
   font-size: 4.0rem;
@@ -322,6 +317,7 @@ body {
 }
 
 .projects-page ul {
+  font-size: 2.0rem;
   list-style: none;
   padding: 0;
 }
@@ -357,11 +353,12 @@ body {
 }
 
 .skills-page .skills-grid span {
+  font-size: 1.1rem;
   background: rgba(98, 142, 255, 0.379);
   padding: 0.5rem 1rem;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0);
-  font-weight: 600;
+  font-weight: 200;
   transition: all 0.25s ease;
 }
 
@@ -380,6 +377,7 @@ body {
 }
 
 .experience-page {
+  font-size: 2.0rem;
   color: #f8eaff;
 }
 
@@ -411,6 +409,7 @@ body {
 /*  CONTACT PAGE  */
 
 .contact-page {
+  font-size: 4.0rem;
   text-align: center;
   color: #ffe4ff;
 }
@@ -421,10 +420,6 @@ body {
   margin-bottom: 0.75rem;
 }
 
-.contact-page p {
-  font-size: 1.1rem;
-  margin: 0.5rem 0;
-}
 
 .contact-page p:hover {
   color: #ffbdfc;
