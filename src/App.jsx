@@ -1,41 +1,93 @@
-import { useState, useEffect } from "react";
-import FolderButton from "./components/FolderButton";
-import ThemeToggle from "./components/ThemeToggle";
-import CatCorner from "./components/CatCorner";
+import { useEffect, useRef, useState } from "react";
+import PageFrame from "./components/layout/PageFrame";
+import SectionTabs from "./components/layout/SectionTabs";
+
+import LandingPage from "./components/sections/LandingPage";
+import About from "./components/sections/About";
+import Skills from "./components/sections/Skills";
+import Projects from "./components/sections/Projects";
+import Experiences from "./components/sections/Experiences";
+import Contact from "./components/sections/Contact";
+import Footer from "./components/layout/Footer";
 
 export default function App() {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
+  const [activeSection, setActiveSection] = useState("About");
+  const [showSwirl, setShowSwirl] = useState(true);
+  const [showTopTabs, setShowTopTabs] = useState(false);
+
+  const landingRef = useRef(null);
 
   useEffect(() => {
-    document.body.classList.remove("theme-dark", "theme-light");
-    document.body.classList.add(theme === "light" ? "theme-light" : "theme-dark");
-  }, [theme]);
+    const handleScroll = () => {
+      if (!landingRef.current) return;
+
+      const rect = landingRef.current.getBoundingClientRect();
+      const landingStillVisible = rect.bottom > window.innerHeight * 0.35;
+
+      setShowSwirl(landingStillVisible);
+      setShowTopTabs(!landingStillVisible);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleSetSection = (section) => {
+    setActiveSection(section);
+
+    const mainContent = document.getElementById("main-content");
+    if (mainContent) {
+      mainContent.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const renderSection = () => {
+    switch (activeSection) {
+      case "About":
+        return <About />;
+      case "Skills":
+        return <Skills />;
+      case "Projects":
+        return <Projects />;
+      case "Experience":
+        return <Experiences />;
+      case "Contact":
+        return <Contact />;
+      default:
+        return <About />;
+    }
+  };
 
   return (
-    <div className="relative w-screen h-screen overflow-hidden">
+    <div className={theme === "dark" ? "theme-dark" : "theme-light"}>
+      <PageFrame>
+        {showTopTabs && (
+          <div className="top-menu-fixed">
+            <SectionTabs
+              activeSection={activeSection}
+              setActiveSection={handleSetSection}
+              theme={theme}
+              setTheme={setTheme}
+            />
+          </div>
+        )}
 
-      {/* DARK MODE BASE */}
-      <div className="content--canvas absolute inset-0 z-0 pointer-events-none" />
+        {showTopTabs && <div className="top-menu-spacer" />}
 
-      {/* LIGHT MODE BASE */}
-      <div className="light-overlay absolute inset-0 z-0 pointer-events-none" />
+        <div ref={landingRef}>
+          <LandingPage showSwirl={showSwirl} />
+        </div>
 
-      {/* DARK MODE OVERLAY */}
-      <div className="dark-overlay absolute inset-0 z-5 pointer-events-none" />
+        <section id="main-content" className="main-content-section">
+          <div className="main-panel-content">
+            {renderSection()}
+          </div>
+        </section>
 
-      {/* UI CONTROLS */}
-      <ThemeToggle theme={theme} setTheme={setTheme} />
-      <CatCorner />
-
-      {/* MAIN UI */}
-      <div className="relative z-10 flex items-center justify-center h-full">
-        <FolderButton theme={theme} />
-      </div>
-
-      {/* COPYRIGHT */}
-      <div className="fixed bottom-3 right-4 z-10 text-sm opacity-70 select-none">
-        © 2025 Faiza Khan
-      </div>
+        <Footer />
+      </PageFrame>
     </div>
   );
 }
