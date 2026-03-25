@@ -41,7 +41,7 @@ export default function Contact() {
           </div>
 
           <a
-            href="/Faiza Khan Master Resume 2026.pdf"
+            href="/Faiza_Khan_Resume_2026 (4).pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="contact-item"
