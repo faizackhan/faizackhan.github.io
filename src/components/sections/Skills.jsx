@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import pinkStar from "../../assets/starIcon.png";
+import starIcon from "../../assets/pixel-icons/SVG/solid/star-solid.svg?raw";
 
 import codeIconRaw from "../../assets/pixel-icons/SVG/regular/code.svg?raw";
 import androidIcon from "../../assets/pixel-icons/SVG/brands/android.svg?raw";
@@ -47,19 +47,46 @@ function recolorSvg(svg) {
       `<svg$1 width="100%" height="100%" preserveAspectRatio="xMidYMid meet">`
     );
 }
-function SkillIcon({ icon, color, label }) {
+function SkillIcon({ icon, color, label, className = "skill-icon" }) {
   const svgMarkup = useMemo(() => recolorSvg(icon), [icon]);
 
   return (
     <span
-      className="skill-icon"
-      style={{ color }} 
+      className={className}
+      style={{ color }}
       aria-label={label}
       role="img"
       dangerouslySetInnerHTML={{ __html: svgMarkup }}
     />
   );
 }
+
+
+
+const categoryMeta = {
+  languages: {
+    icon: starIcon,
+    color: "#356ac7",
+  },
+  devtools: {
+    icon: starIcon,
+    color: "#356ac7",
+  },
+  databases: {
+    icon: starIcon,
+    color: "#356ac7",
+  },
+  "data science": {
+    icon: starIcon,
+    color: "#356ac7",
+  },
+  "frameworks & libraries": {
+    icon: starIcon,
+    color: "#356ac7",
+  },
+};
+
+
 
 const skillCategories = {
   languages: [
@@ -124,11 +151,10 @@ export default function Skills() {
             onClick={() => setActiveCategory(category)}
             className={`skills-tab ${activeCategory === category ? "active" : ""}`}
           >
-            <img
-              src={pinkStar}
-              alt=""
-              className="skills-tab-star"
-              draggable={false}
+            <SkillIcon
+              icon={categoryMeta[category].icon}
+              color={categoryMeta[category].color}
+              label={`${category} icon`}
             />
             <span className="font-body">{category}</span>
           </button>

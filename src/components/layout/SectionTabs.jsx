@@ -1,4 +1,5 @@
-import starIcon from "../../assets/ThemeIcon.png";
+import darkIcon from "../../assets/pixel-icons/SVG/solid/brightness-low-solid.svg?raw";
+import lightIcon from "../../assets/pixel-icons/SVG/solid/brightness-high-solid.svg?raw";
 
 const tabs = ["About", "Skills", "Projects", "Experience", "Contact"];
 
@@ -32,11 +33,11 @@ export default function SectionTabs({
           className="star-toggle"
           aria-label="Toggle theme"
         >
-          <img
-            src={starIcon}
-            alt=""
+          <span
             className="theme-star"
-            draggable={false}
+            dangerouslySetInnerHTML={{
+              __html: theme === "dark" ? lightIcon : darkIcon,
+            }}
           />
         </button>
       </div>

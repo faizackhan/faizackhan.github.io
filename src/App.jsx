@@ -77,7 +77,18 @@ export default function App() {
         {showTopTabs && <div className="top-menu-spacer" />}
 
         <div ref={landingRef}>
-          <LandingPage showSwirl={showSwirl} />
+            <LandingPage
+              showSwirl={showSwirl}
+              onSwirlClick={() => {
+                setShowTopTabs(true);
+                setShowSwirl(false);
+
+                const mainContent = document.getElementById("main-content");
+                if (mainContent) {
+                  mainContent.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+            />
         </div>
 
         <section id="main-content" className="main-content-section">

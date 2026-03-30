@@ -1,6 +1,6 @@
 import swirlIcon from "../../assets/swirlIcon.png";
 
-export default function LandingPage({ showSwirl }) {
+export default function LandingPage({ showSwirl, onSwirlClick }) {
   const handleScrollDown = () => {
     const nextSection = document.getElementById("main-content");
     if (nextSection) {
