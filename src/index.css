@@ -121,8 +121,8 @@ html {
   border: 1.5px solid var(--border);
   border-radius: 999px;
   background-color: transparent;
-  display: center;
-  align-items: right;
+  display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 0 18px;
   gap: 10px;
@@ -675,7 +675,7 @@ html {
 
 .section-tabs-left {
   display: flex;
-  gap: 5.5rem;
+  gap: 1.5rem;
   align-items: center;
 }
 
@@ -784,7 +784,7 @@ html {
 }
 
 .section-tabs {
-  width: 110%;
+  width: 100%;
   min-height: 64px;
   border: 1.5px solid var(--border);
   border-radius: 999px;
@@ -983,18 +983,19 @@ html {
 /* icons */
 
 .skill-icon {
-  display: inline-flex;
-  width: 32px;
-  height: 32px;
-  overflow: visible; 
+  width: 56px;
+  height: 56px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .skill-icon svg {
   width: 100%;
   height: 100%;
-  overflow: visible;
+  display: block;
 }
-
 
 .projects-carousel-shell {
   position: relative;
@@ -1040,4 +1041,57 @@ html {
 .projects-carousel-btn:disabled {
   opacity: 0.4;
   cursor: default;
+}
+
+@media (max-width: 768px) {
+  .top-menu-fixed {
+    top: 10px;
+    width: 100%;
+    padding: 0 12px;
+    box-sizing: border-box;
+  }
+
+  .top-menu-spacer {
+    height: 76px;
+  }
+
+  .section-tabs {
+    width: 100%;
+    min-height: auto;
+    padding: 8px 10px;
+    gap: 6px;
+    border-radius: 20px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    scrollbar-width: none;
+  }
+
+  .section-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .section-tabs-left {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .section-tab {
+    font-size: 1rem;
+    padding: 8px 14px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .theme-star {
+    width: 28px;
+    height: 28px;
+  }
+
+  .star-toggle {
+    margin-left: auto;
+    flex-shrink: 0;
+  }
 }
