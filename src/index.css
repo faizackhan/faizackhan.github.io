@@ -248,31 +248,31 @@ html {
   background: transparent;
   border: none;
   cursor: pointer;
+  color: #ff4fb8;
 }
 
 .skills-tab span {
   white-space: nowrap;
+  color: #4f4fff;
 }
 
 .skills-tab.active {
   background-color: rgba(245, 143, 169, 0.12);
   height: 45px;
+  color: #4f4fff;
 }
 
 .skills-tab-icon {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 10px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  fill: #3483d6 !important;
 }
 
-.skills-tab-icon svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
 
 
 .skills-grid {

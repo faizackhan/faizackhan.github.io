@@ -1,26 +1,52 @@
 import { useRef, useState } from "react";
-import creditRiskImg from "../../assets/project-images/creditRiskProject.png";
-import smartAirImg from "../../assets/project-images/SmartAirProject.png";
-import f1Img from "../../assets/project-images/F1Project.png";
-import avatarImg from "../../assets/avatarv2.png";
-import studyNookImg from "../../assets/project-images/studynook_logo.png";
+
+import placeholder_cover from "../../assets/project-covers/placeholder-cover.png";
+
+import website_cover from "../../assets/project-covers/personalweb-cover.png";
+import studyNook_cover from "../../assets/project-covers/studynook-cover.png";
+import smartAir_cover from "../../assets/project-covers/smartair-cover.png";
+
+import creditRisk_cover from "../../assets/project-covers/credit-cover.png";
+import f1_cover from "../../assets/project-covers/f1-cover.png";
+import school_cover from "../../assets/project-covers/schoolproj-cover.png";
+import celestial_cover from "../../assets/project-covers/celestial-cover.png";
+import worldCup_cover from "../../assets/project-covers/worldcup-cover.png";
+import salon_cover from "../../assets/project-covers/salon-cover.png";
+import periodicTbl_cover from "../../assets/project-covers/periodic-cover.png";
+
+
+import qaifs_cover from "../../assets/project-covers/marketing-cover.png";
+import numberGame_cover from "../../assets/project-covers/numbers-cover.png";
 
 const projectCategories = {
   "web applications": [
     {
       id: "personalWebsite",
       title: "Personal Website",
-      image: avatarImg,
+      image: website_cover,
       description:
         "A portfolio site designed and built to showcase projects, skills, and experience.",
       link: "https://github.com/faizackhan/faizackhan.github.io",
     },
+    {
+      id: "SurveyFormProject",
+      title: "Survey Form Project",
+      image: placeholder_cover,
+      description:
+        "This project is a custom survey form built to collect feedback,\
+         preferences, and user experiences from visitors.\
+         It includes interactive form elements such as text inputs, email validation,\
+          number fields, dropdown menus, radio buttons, checkboxes, and a comment section.\
+           The project focuses on creating a clean, user-friendly interface while applying\
+            strong HTML form structure, accessibility, and responsive design principles.",
+      link: "https://github.com/faizackhan",
+    }
   ],
   mobile: [
     {
       id: "smartAirProject",
       title: "Smart-Air",
-      image: smartAirImg,
+      image: smartAir_cover,
       description:
         "Android + Firebase app for asthma management with role-based dashboards and PDF report export.",
       link: "https://github.com/faizackhan/smart-air",
@@ -28,7 +54,7 @@ const projectCategories = {
     {
       id: "studynook",
       title: "StudyNook",
-      image: studyNookImg,
+      image: studyNook_cover,
       description:
         "AI study planner that helps students organize tasks and manage study time.",
       link: "#",
@@ -38,7 +64,7 @@ const projectCategories = {
     {
       id: "creditRiskProject",
       title: "Credit Risk Data Analysis",
-      image: creditRiskImg,
+      image: creditRisk_cover,
       description:
         "Exploratory data analysis on LendingClub loans, focusing on default risk and borrower behavior.",
       link: "https://github.com/faizackhan/credit-risk-eda",
@@ -46,7 +72,7 @@ const projectCategories = {
     {
       id: "f1Project",
       title: "Las Vegas F1 Comp Analysis",
-      image: f1Img,
+      image: f1_cover,
       description:
         "Comparative data analysis of Las Vegas F1 performance metrics presented in a workshop setting.",
       link: "https://docs.google.com/presentation/d/1QKOeUSfeGXyQU73GX4RUZC13FOpFfh8xKm9WJOvH9Tw",
@@ -54,21 +80,181 @@ const projectCategories = {
     {
       id: "staa57CourseProject",
       title: "STAA57 Course Project",
-      image: null,
+      image: school_cover,
       description:
         "Course-based statistical analysis project focused on comparing race performance data and presenting findings clearly.",
       link: "https://github.com/faizackhan/STAA57-Project",
     },
+    {
+      id: "celestialBodiesProject",
+      title: "Celestial Bodies Database",
+      image: celestial_cover,
+      description:
+        "Built a database of celestial bodies using PostgreSQL",
+      link: "https://github.com/faizackhan",
+    },
+    {
+      id: "WorldCupProject",
+      title: "World Cup Database",
+      image: worldCup_cover,
+      description:
+        "a Bash script that enters information from World Cup games into PostgreSQL, then query the database for useful statistics.",
+      link: "https://github.com/faizackhan",
+    },
+    {
+      id: "SalonAppointmentProject",
+      title: "Salon Appointment Database",
+      image: salon_cover,
+      description:
+        "An interactive Bash program that uses PostgreSQL to track the customers and appointments for your salon.",
+      link: "https://github.com/faizackhan",
+    },
+    {
+      id: "periodictableProject",
+      title: "Periodic Table Database",
+      image: periodicTbl_cover,
+      description:
+        "Bash script to get information about chemical elements from a periodic table database.",
+      link: "https://github.com/faizackhan",
+    }
+  ],
+  javascript: [
+    {
+      id: "markdowntohtmlProject",
+      title: "markdown-to-html converter",
+      image: placeholder_cover,
+      description:
+        "fill in later",
+      link: "https://github.com/faizackhan",
+    },
+    {
+      id: "drummachineProject",
+      title: "Drum Machine",
+      image: placeholder_cover,
+      description:
+        "fill in later",
+      link: "https://github.com/faizackhan",
+    },
+    {
+      id: "votingsystemProject",
+      title: "Voting System",
+      image: placeholder_cover,
+      description:
+        "fill in later",
+      link: "https://github.com/faizackhan",
+    },
+    {
+      id: "bankaccountProject",
+      title: "Bank Account Manager",
+      image: placeholder_cover,
+      description:
+        "fill in later",
+      link: "https://github.com/faizackhan",
+    },
+    {
+      id: "weatherappProject",
+      title: "Weather App",
+      image: placeholder_cover,
+      description:
+        "fill in later",
+      link: "https://github.com/faizackhan",
+    }
+  ],
+  frontend: [
+    {
+      id: "currencyConverterProject",
+      title: "Currency Converter",
+      image: placeholder_cover,
+      description:
+        "fill in later",
+      link: "https://github.com/faizackhan",
+    },
+    {
+      id: "tictactoeProject",
+      title: "Tic-Tac-Toe Game",
+      image: placeholder_cover,
+      description:
+        "fill in later",
+      link: "https://github.com/faizackhan",
+    }
+  ],
+  backend: [
+    {
+      id: "blankProject",
+      title: "untitled project",
+      image: placeholder_cover,
+      description:
+        "fill in later",
+      link: "https://github.com/faizackhan",
+    }
+  ],
+  "ui & ux": [
+    {
+      id: "designPortfolioProject",
+      title: "Design Portfolio",
+      image: placeholder_cover,
+      description:
+        "fill in later",
+      link: "https://github.com/faizackhan",
+    }
   ],
   other: [
     {
       id: "qaifsMarketing",
       title: "Marketing Strategy @ QAIFS",
-      image: null,
+      image: qaifs_cover,
       description:
         "Campaign planning and branding strategy work focused on outreach, engagement, and event visibility.",
       link: "https://www.instagram.com/qaifs.ut/",
     },
+    {
+      id: "NumberGuessingGameProject",
+      title: "Number Guessing Game",
+      image: numberGame_cover,
+      description:
+        "A number guessing game that runs in the terminal and saves user information.",
+      link: "https://github.com/faizackhan",
+    },
+    {
+      id: "configmanagerProject",
+      title: "Configuration Manager",
+      image: placeholder_cover,
+      description:
+        "A tool for managing and configuring application settings.",
+      link: "https://github.com/faizackhan",
+    },
+    {
+      id: "budgetappProject",
+      title: "Budget App",
+      image: placeholder_cover,
+      description:
+        "A simple budgeting app to track expenses and income.",
+      link: "https://github.com/faizackhan",
+    },
+    {
+      id: "polygonAreaCalculatorProject",
+      title: "Polygon Area Calculator",
+      image: placeholder_cover,
+      description:
+        "A tool for calculating the area of various polygon shapes.",
+      link: "https://github.com/faizackhan",
+    },
+    {
+      id: "hashtableProject",
+      title: "Hash Table Implementation",
+      image: placeholder_cover,
+      description:
+        "A custom implementation of a hash table data structure.",
+      link: "https://github.com/faizackhan",
+    },
+    {
+      id: "hanoiTowersProject",
+      title: "Hanoi Towers",
+      image: placeholder_cover,
+      description:
+        "A implementation of the classic Hanoi Towers puzzle.",
+      link: "https://github.com/faizackhan",
+    }
   ],
 };
 

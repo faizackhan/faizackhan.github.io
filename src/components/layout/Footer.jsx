@@ -1,4 +1,4 @@
-import footerIcon from "../../assets/footerIcon.png";
+
 
 export default function Footer() {
   return (
@@ -11,7 +11,7 @@ export default function Footer() {
 
       {/* RIGHT ICONS */}
       <div className="absolute bottom-4 right-6 flex items-end gap-3">
-        <img src={footerIcon} className="w-60" draggable={false} />
+        
       </div>
 
     </footer>

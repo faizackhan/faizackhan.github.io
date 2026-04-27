@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import starIcon from "../../assets/pixel-icons/SVG/solid/star-solid.svg?raw";
+import starIcon from "../../assets/pixel-icons/SVG/solid/folder-open-solid.svg?raw";
 
 import codeIconRaw from "../../assets/pixel-icons/SVG/regular/code.svg?raw";
 import androidIcon from "../../assets/pixel-icons/SVG/brands/android.svg?raw";
@@ -69,7 +69,7 @@ function SkillIcon({ icon, color, label, className = "skill-icon" }) {
 const categoryMeta = {
   languages: {
     icon: starIcon,
-    color: "#356ac7",
+    color: "356ac7",
   },
   devtools: {
     icon: starIcon,
@@ -161,6 +161,7 @@ export default function Skills() {
               icon={categoryMeta[category].icon}
               color={categoryMeta[category].color}
               label={`${category} icon`}
+              className="skills-tab-icon"
             />
             <span className="font-body">{category}</span>
           </button>

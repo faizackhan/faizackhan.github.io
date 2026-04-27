@@ -1,5 +1,5 @@
-import darkIcon from "../../assets/pixel-icons/SVG/solid/brightness-low-solid.svg?raw";
-import lightIcon from "../../assets/pixel-icons/SVG/solid/brightness-high-solid.svg?raw";
+import darkIcon from "../../assets/pixel-icons/SVG/solid/brightness-high-solid.svg?raw";
+import lightIcon from "../../assets/pixel-icons/SVG/solid/brightness-low-solid.svg?raw";
 
 const tabs = ["About", "Skills", "Projects", "Experience", "Contact"];
 
