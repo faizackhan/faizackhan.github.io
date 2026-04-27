@@ -17,6 +17,9 @@ import bashIcon from "../../assets/pixel-icons/custom/bashicon.svg?raw";
 
 import supabaseIcon from "../../assets/pixel-icons/custom/supabaseicon.svg?raw";
 import firebaseIcon from "../../assets/pixel-icons/custom/firebaseicon.svg?raw";
+import postgresqlIcon from "../../assets/pixel-icons/custom/Postgresql.svg?raw";
+import mysqlIcon from "../../assets/pixel-icons/custom/mysql.svg?raw";
+import sqliteIcon from "../../assets/pixel-icons/custom/sqlite.svg?raw";
 
 import matplotlibIcon from "../../assets/pixel-icons/custom/matplotlibicon.svg?raw";
 import pandasIcon from "../../assets/pixel-icons/custom/pandasicon.svg?raw";
@@ -114,6 +117,9 @@ const skillCategories = {
   ],
 
   databases: [
+    { name: "postgresql", icon: postgresqlIcon, color: "#356ac7" },
+    { name: "mysql", icon: mysqlIcon, color: "#356ac7" },
+    { name: "sqlite", icon: sqliteIcon, color: "#356ac7" },
     { name: "firebase", icon: firebaseIcon, color: "#356ac7" },
     { name: "supabase", icon: supabaseIcon, color: "#356ac7" }
   ],
