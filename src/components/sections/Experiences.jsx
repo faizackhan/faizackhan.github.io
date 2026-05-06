@@ -4,17 +4,21 @@ import webdevIcon from "../../assets/pixel-icons/SVG/regular/headphones.svg";
 
 const experiences = [
   {
+    title: "president of PROTOTYPE",
+    image: amacssLogo,
+  },
+  {
+    title: "vice president of technology @ csec",
+    image: webdevIcon,
+  },
+  {
     title: "finance executive @ amacss",
     image: amacssLogo,
   },
   {
     title: "vice president of marketing @ qaifs",
     image: qaifsLogo,
-  },
-  {
-    title: "Freelance Web Developer",
-    image: webdevIcon,
-  },
+  }
 ];
 
 export default function Experiences() {

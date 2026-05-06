@@ -70,7 +70,7 @@ const projectCategories = {
       link: "https://github.com/faizackhan/credit-risk-eda",
     },
     {
-      id: "f1Project",
+      id: "f1Project",          
       title: "Las Vegas F1 Comp Analysis",
       image: f1_cover,
       description:
@@ -83,7 +83,15 @@ const projectCategories = {
       image: school_cover,
       description:
         "Course-based statistical analysis project focused on comparing race performance data and presenting findings clearly.",
-      link: "https://github.com/faizackhan/STAA57-Project",
+      link: "/project-files/STAA57_Draft_Notebook.pdf",
+    },
+    {
+      id: "staa57QueryProject",
+      title: "STAA57 SQL Query Project",
+      image: placeholder_cover,
+      description:
+        "Built a dashboard based on STAA57 project data using SQL queries to extract insights and present them in a clear format.",
+      link: "https://github.com/faizackhan",
     },
     {
       id: "celestialBodiesProject",
@@ -91,7 +99,7 @@ const projectCategories = {
       image: celestial_cover,
       description:
         "Built a database of celestial bodies using PostgreSQL",
-      link: "https://github.com/faizackhan",
+      link: "/project-files/universe.txt"
     },
     {
       id: "WorldCupProject",
@@ -124,15 +132,16 @@ const projectCategories = {
       title: "markdown-to-html converter",
       image: placeholder_cover,
       description:
-        "fill in later",
+        "work in progress 🔧",
       link: "https://github.com/faizackhan",
     },
+    /*
     {
       id: "drummachineProject",
       title: "Drum Machine",
       image: placeholder_cover,
       description:
-        "fill in later",
+        "work in progress 🔧",
       link: "https://github.com/faizackhan",
     },
     {
@@ -140,7 +149,7 @@ const projectCategories = {
       title: "Voting System",
       image: placeholder_cover,
       description:
-        "fill in later",
+        "work in progress 🔧",
       link: "https://github.com/faizackhan",
     },
     {
@@ -148,7 +157,7 @@ const projectCategories = {
       title: "Bank Account Manager",
       image: placeholder_cover,
       description:
-        "fill in later",
+        "work in progress 🔧",
       link: "https://github.com/faizackhan",
     },
     {
@@ -156,17 +165,19 @@ const projectCategories = {
       title: "Weather App",
       image: placeholder_cover,
       description:
-        "fill in later",
+        "work in progress 🔧",
       link: "https://github.com/faizackhan",
     }
+      ... */
   ],
+  /*
   frontend: [
     {
       id: "currencyConverterProject",
       title: "Currency Converter",
       image: placeholder_cover,
       description:
-        "fill in later",
+        "work in progress 🔧",
       link: "https://github.com/faizackhan",
     },
     {
@@ -174,7 +185,7 @@ const projectCategories = {
       title: "Tic-Tac-Toe Game",
       image: placeholder_cover,
       description:
-        "fill in later",
+        "work in progress 🔧",
       link: "https://github.com/faizackhan",
     }
   ],
@@ -184,17 +195,18 @@ const projectCategories = {
       title: "untitled project",
       image: placeholder_cover,
       description:
-        "fill in later",
+        "work in progress 🔧",
       link: "https://github.com/faizackhan",
     }
   ],
+  */
   "ui & ux": [
     {
       id: "designPortfolioProject",
       title: "Design Portfolio",
       image: placeholder_cover,
       description:
-        "fill in later",
+        "work in progress 🔧",
       link: "https://github.com/faizackhan",
     }
   ],
@@ -207,6 +219,7 @@ const projectCategories = {
         "Campaign planning and branding strategy work focused on outreach, engagement, and event visibility.",
       link: "https://www.instagram.com/qaifs.ut/",
     },
+    /*
     {
       id: "NumberGuessingGameProject",
       title: "Number Guessing Game",
@@ -255,6 +268,7 @@ const projectCategories = {
         "A implementation of the classic Hanoi Towers puzzle.",
       link: "https://github.com/faizackhan",
     }
+      ... */
   ],
 };
 
