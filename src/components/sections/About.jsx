@@ -1,37 +1,35 @@
 import avatarImg from "../../assets/avatarv2.png";
+import cuteHeadshot from "../../assets/cuteheadshot.png";
 
 export default function About() {
   return (
     <div className="about-wrapper">
-      <h2 className="font-heading section-title">about me</h2>
+      <h2 className="font-heading about-heading">about me</h2>
 
       <div className="about-container">
-        <img src={avatarImg} alt="Faiza" className="about-avatar" />
-
         <div className="about-text font-body">
           <p>
-            Hey! I’m Faiza, a second-year student @uoft, pursuing
-            <span className="highlight">
-              {" "}Statistics, Computer Science, and Economics
-            </span>
-            , & an aspiring data scientist! I have a passion for analyzing data
-            and presenting it in a digestible format, as well as uncovering
-            meaningful insights from complex datasets.
+            Hi, I'm Faiza Khan, a Statistics student at the University of
+            Toronto with a passion for building products at the intersection of
+            data science, machine learning, and user experience design. I enjoy transforming
+            complex data and technical concepts into intuitive, human-centered
+            solutions that people actually want to use.
           </p>
-
           <p>
-            I’m actively involved in campus organizations and enjoy building
-            projects at the intersection of data and technology. Beyond
-            academics, I enjoy creating music, and indulging in
-            creative pursuits such as web dev and painting.
+            My interests span machine learning, product analytics, and interface design, and I'm especially drawn to
+            projects that combine technical problem-solving with thoughtful user
+            experience.
+          </p>
+          <p>
+            Whether I'm analyzing data, prototyping a product idea, or building tools, I'm motivated by creating technology that is both
+            intelligent and accessible.
           </p>
         </div>
-      </div>
 
-      <p className="font-body about-text">
-        This website is my digital journal, showcasing my work, experience, and
-        growth. Feel free to explore!
-      </p>
+        <div className="about-avatar-wrapper">
+          <img src={cuteHeadshot} alt="Faiza" className="about-avatar" />
+        </div>
+      </div>
     </div>
   );
 }

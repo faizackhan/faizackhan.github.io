@@ -14,6 +14,12 @@ import worldCup_cover from "../../assets/project-covers/worldcup-cover.png";
 import salon_cover from "../../assets/project-covers/salon-cover.png";
 import periodicTbl_cover from "../../assets/project-covers/periodic-cover.png";
 
+import mino_cover from "../../assets/mino.png";
+
+
+import arrowLeftIcon from "../../assets/pixel-icons/SVG/regular/arrow-left.svg";
+import arrowRightIcon from "../../assets/pixel-icons/SVG/regular/arrow-right.svg";
+
 
 import qaifs_cover from "../../assets/project-covers/marketing-cover.png";
 import numberGame_cover from "../../assets/project-covers/numbers-cover.png";
@@ -22,24 +28,11 @@ const projectCategories = {
   "web applications": [
     {
       id: "personalWebsite",
-      title: "Personal Website",
+      title: "Web Portfolio",
       image: website_cover,
       description:
-        "A portfolio site designed and built to showcase projects, skills, and experience.",
+        "This website! A portfolio site designed and built to showcase my projects, skills, and experience.",
       link: "https://github.com/faizackhan/faizackhan.github.io",
-    },
-    {
-      id: "SurveyFormProject",
-      title: "Survey Form Project",
-      image: placeholder_cover,
-      description:
-        "This project is a custom survey form built to collect feedback,\
-         preferences, and user experiences from visitors.\
-         It includes interactive form elements such as text inputs, email validation,\
-          number fields, dropdown menus, radio buttons, checkboxes, and a comment section.\
-           The project focuses on creating a clean, user-friendly interface while applying\
-            strong HTML form structure, accessibility, and responsive design principles.",
-      link: "https://github.com/faizackhan",
     }
   ],
   mobile: [
@@ -202,6 +195,14 @@ const projectCategories = {
   */
   "ui & ux": [
     {
+      id: "CSCC10Project",
+      title: "Mino - Financial Mobile App Usability Research",
+      image: mino_cover,
+      description:
+        "work in progress 🔧",
+      link: "https://github.com/faizackhan",
+    },
+    {
       id: "designPortfolioProject",
       title: "Design Portfolio",
       image: placeholder_cover,
@@ -294,8 +295,8 @@ export default function Projects() {
   };
 
   return (
-    <div className="section-page font-body projects-main">
-      <h2 className="section-title font-heading">projects</h2>
+    <div className="projects-main">
+      <h2 className="about-heading">projects</h2>
 
       <div className="projects-folder-shell">
         <nav className="projects-folder-tabs">

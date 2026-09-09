@@ -1,7 +1,8 @@
 import darkIcon from "../../assets/pixel-icons/SVG/solid/brightness-high-solid.svg?raw";
 import lightIcon from "../../assets/pixel-icons/SVG/solid/brightness-low-solid.svg?raw";
+import fkLogo from "../../assets/fklogo.png";
 
-const tabs = ["About", "Skills", "Projects", "Experience", "Contact"];
+const tabs = ["About", "Skills", "Projects", "Experience", "CSCA20", "Contact"];
 
 export default function SectionTabs({
   activeSection,
@@ -15,7 +16,15 @@ export default function SectionTabs({
 
   return (
     <div className="section-tabs-wrap">
-      <div className="font-body section-tabs">
+      <nav className="section-tabs">
+        <button
+          className="section-tabs-logo"
+          onClick={() => document.getElementById("landing")?.scrollIntoView({ behavior: "smooth" })}
+          aria-label="Scroll to top"
+        >
+          <img src={fkLogo} alt="FK Logo" />
+        </button>
+
         <div className="section-tabs-left">
           {tabs.map((tab) => (
             <button
@@ -40,7 +49,7 @@ export default function SectionTabs({
             }}
           />
         </button>
-      </div>
+      </nav>
     </div>
   );
 }

@@ -147,7 +147,7 @@ export default function Skills() {
 
   return (
     <div className="section-page skills-main">
-      <h2 className="section-title font-heading">skills</h2>
+      <h2 className="about-heading">skills</h2>
 
       <div className="skills-tabs-row">
         {categoryNames.map((category) => (

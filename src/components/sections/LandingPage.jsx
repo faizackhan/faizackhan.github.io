@@ -1,8 +1,6 @@
-import swirlIcon from "../../assets/swirlIcon.png";
-
-export default function LandingPage({ showSwirl, onSwirlClick }) {
+export default function LandingPage({ menuOpen, onToggleMenu }) {
   const handleScrollDown = () => {
-    const nextSection = document.getElementById("main-content");
+    const nextSection = document.getElementById("about");
     if (nextSection) {
       nextSection.scrollIntoView({ behavior: "smooth" });
     }
@@ -10,27 +8,37 @@ export default function LandingPage({ showSwirl, onSwirlClick }) {
 
   return (
     <section className="landing-section">
-      <div className="landing-content">
-        <h1 className="font-heading landing-title">Hi, I’m Faiza Khan!</h1>
-        <p className="font-body landing-subtitle">
-          Statistics, Computer Science & Economics @ UofT
-        </p>
-      </div>
+      <button
+        className="hamburger-btn"
+        aria-label="Toggle menu"
+        aria-expanded={menuOpen}
+        onClick={onToggleMenu}
+      >
+        <span className="hamburger-line" />
+        <span className="hamburger-line" />
+        <span className="hamburger-line" />
+      </button>
 
-      {showSwirl && (
-        <button
-          onClick={handleScrollDown}
-          className="landing-swirl-button"
-          aria-label="Scroll down"
-        >
-          <img
-            src={swirlIcon}
-            alt=""
-            className="landing-swirl"
-            draggable={false}
-          />
-        </button>
-      )}
+      <div className="landing-card">
+        <div className="landing-content">
+          <h1 className="landing-title">
+            <span className="title-regular">hi, i'm </span>
+            <span className="title-italic">faiza</span>
+          </h1>
+          <p className="landing-subtitle">AN ASPIRING DATA SCIENTIST</p>
+          <p className="landing-interests">
+            Other interests are, ui/ux, machine learning, math
+          </p>
+        </div>
+
+        <div className="landing-footer">
+          <nav className="landing-nav">
+            <a href="#about" onClick={(e) => { e.preventDefault(); handleScrollDown(); }} className="landing-nav-link">about me!</a>
+            <span className="landing-nav-sep"> | </span>
+            <a href="#about" onClick={(e) => { e.preventDefault(); handleScrollDown(); }} className="landing-nav-link">my work!</a>
+          </nav>
+        </div>
+      </div>
     </section>
   );
 }

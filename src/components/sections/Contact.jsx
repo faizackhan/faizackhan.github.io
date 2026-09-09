@@ -6,9 +6,9 @@ import resumeIcon from "../../assets/pixel-icons/SVG/solid/copy-solid.svg";
 
 export default function Contact() {
   return (
-    <div className="section-page contact-main">
+    <div className="contact-main">
 
-      <h2 className="section-title font-heading text-center">contact</h2>
+      <h2 className="about-heading text-center">contact</h2>
 
       <div className="contact-content">
 

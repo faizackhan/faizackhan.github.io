@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import PageFrame from "./components/layout/PageFrame";
 import SectionTabs from "./components/layout/SectionTabs";
+import Sections from "./components/layout/Sections";
 
 import LandingPage from "./components/sections/LandingPage";
 import About from "./components/sections/About";
@@ -9,95 +10,119 @@ import Projects from "./components/sections/Projects";
 import Experiences from "./components/sections/Experiences";
 import Contact from "./components/sections/Contact";
 import Footer from "./components/layout/Footer";
+import CSCA20Notes from "./components/sections/CSCA20Notes.jsx";
+
+const SECTION_IDS = {
+  LandingPage: "landing",
+  About: "about",
+  Skills: "skills",
+  Projects: "projects",
+  Experience: "experience",
+  CSCA20: "csca20",
+  Contact: "contact",
+};
 
 export default function App() {
   const [theme, setTheme] = useState("light");
-  const [activeSection, setActiveSection] = useState("About");
-  const [showSwirl, setShowSwirl] = useState(true);
-  const [showTopTabs, setShowTopTabs] = useState(false);
+  const [activeSection, setActiveSection] = useState("LandingPage");
+  const [showNav, setShowNav] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const landingRef = useRef(null);
+  const sectionRefs = useRef({});
 
+  // Show/hide fixed nav once you scroll past the landing section
   useEffect(() => {
-    const handleScroll = () => {
-      if (!landingRef.current) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setShowNav(!entry.isIntersecting),
+      { threshold: 0 }
+    );
+    if (landingRef.current) observer.observe(landingRef.current);
+    return () => observer.disconnect();
+  }, []);
 
-      const rect = landingRef.current.getBoundingClientRect();
-      const landingStillVisible = rect.bottom > window.innerHeight * 0.35;
+  // Highlight the nav tab for whichever section is currently in view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const match = Object.entries(SECTION_IDS).find(
+              ([, id]) => id === entry.target.id
+            );
+            if (match) setActiveSection(match[0]);
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
 
-      setShowSwirl(landingStillVisible);
-      setShowTopTabs(!landingStillVisible);
-    };
+    Object.values(sectionRefs.current).forEach((el) => {
+      if (el) observer.observe(el);
+    });
 
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => observer.disconnect();
   }, []);
 
   const handleSetSection = (section) => {
     setActiveSection(section);
-
-    const mainContent = document.getElementById("main-content");
-    if (mainContent) {
-      mainContent.scrollIntoView({ behavior: "smooth" });
-    }
+    setMenuOpen(false);
+    const id = SECTION_IDS[section];
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
-  const renderSection = () => {
-    switch (activeSection) {
-      case "About":
-        return <About />;
-      case "Skills":
-        return <Skills />;
-      case "Projects":
-        return <Projects />;
-      case "Experience":
-        return <Experiences />;
-      case "Contact":
-        return <Contact />;
-      default:
-        return <About />;
-    }
-  };
+  const handleToggleMenu = () => setMenuOpen((prev) => !prev);
 
   return (
     <div className={theme === "dark" ? "theme-dark" : "theme-light"}>
       <PageFrame>
-        {showTopTabs && (
-          <div className="top-menu-fixed">
-            <SectionTabs
-              activeSection={activeSection}
-              setActiveSection={handleSetSection}
-              theme={theme}
-              setTheme={setTheme}
-            />
-          </div>
-        )}
-
-        {showTopTabs && <div className="top-menu-spacer" />}
-
-        <div ref={landingRef}>
-            <LandingPage
-              showSwirl={showSwirl}
-              onSwirlClick={() => {
-                setShowTopTabs(true);
-                setShowSwirl(false);
-
-                const mainContent = document.getElementById("main-content");
-                if (mainContent) {
-                  mainContent.scrollIntoView({ behavior: "smooth" });
-                }
-              }}
-            />
+        {/* Nav — fixed at top, visible only after scrolling past landing */}
+        <div className={`top-menu-fixed ${showNav || menuOpen ? "menu-visible" : "menu-hidden"}`}>
+          <SectionTabs
+            activeSection={activeSection}
+            setActiveSection={handleSetSection}
+            theme={theme}
+            setTheme={setTheme}
+          />
         </div>
 
-        <section id="main-content" className="main-content-section">
+        {/* All sections, stacked, on one page */}
+        <section className="main-content-section">
           <div className="main-panel-content">
-            {renderSection()}
+
+            {/* Landing — now inside the same continuous panel */}
+            <div
+              id="landing"
+              ref={(el) => {
+                landingRef.current = el;
+                sectionRefs.current.landing = el;
+              }}
+            >
+              <LandingPage menuOpen={menuOpen} onToggleMenu={handleToggleMenu} />
+            </div>
+
+            <Sections id="about" ref={(el) => (sectionRefs.current.about = el)}>
+              <About />
+            </Sections>
+            <Sections id="skills" ref={(el) => (sectionRefs.current.skills = el)}>
+              <Skills />
+            </Sections>
+            <Sections id="projects" ref={(el) => (sectionRefs.current.projects = el)}>
+              <Projects />
+            </Sections>
+            <Sections id="experience" ref={(el) => (sectionRefs.current.experience = el)}>
+              <Experiences />
+            </Sections>
+            <Sections id="csca20" ref={(el) => (sectionRefs.current.csca20 = el)}>
+              <CSCA20Notes />
+            </Sections>
+            <Sections id="contact" ref={(el) => (sectionRefs.current.contact = el)}>
+              <Contact />
+            </Sections>
+            <Footer theme={theme} setTheme={setTheme} />
           </div>
         </section>
-
-        <Footer />
       </PageFrame>
     </div>
   );
