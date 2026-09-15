@@ -1,33 +1,32 @@
-import avatarImg from "../../assets/avatarv2.png";
-import cuteHeadshot from "../../assets/cuteheadshot.png";
-
 export default function About() {
   return (
     <div className="about-wrapper">
-      <h2 className="font-heading about-heading">about me</h2>
-
+      <h2 className="about-heading">a bit about me</h2>
       <div className="about-container">
-        <div className="about-text font-body">
+        <div className="about-text">
           <p>
-            Hi, I'm Faiza Khan, a Statistics student at the University of
-            Toronto with a passion for building products at the intersection of
-            data science, machine learning, and user experience design. I enjoy transforming
-            complex data and technical concepts into intuitive, human-centered
-            solutions that people actually want to use.
+            I'm a third-year Statistics Specialist (Data Science and Machine
+            Learning) student at the University of Toronto, minoring in
+            Computer Science and Economics.
           </p>
           <p>
-            My interests span machine learning, product analytics, and interface design, and I'm especially drawn to
-            projects that combine technical problem-solving with thoughtful user
-            experience.
+            I like sitting at the intersection of data, software, and
+            design — turning messy datasets into useful models, and models
+            into interfaces people actually enjoy using.
           </p>
           <p>
-            Whether I'm analyzing data, prototyping a product idea, or building tools, I'm motivated by creating technology that is both
-            intelligent and accessible.
+            Outside of school I'm currently on a co-op placement, teaching
+            robotics and coding curriculum to kids, which somehow makes me a
+            better communicator about technical ideas too.
+          </p>
+          <p>
+            I'm especially drawn to product analytics, UX research, and
+            data visualization — roles where being curious about people and
+            comfortable with numbers both matter.
           </p>
         </div>
-
         <div className="about-avatar-wrapper">
-          <img src={cuteHeadshot} alt="Faiza" className="about-avatar" />
+          <img className="about-avatar" src="/src/assets/cuteheadshot.png" alt="Faiza" />
         </div>
       </div>
     </div>
