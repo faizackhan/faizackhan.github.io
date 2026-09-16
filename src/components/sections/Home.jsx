@@ -1,5 +1,6 @@
 import minimalProjGif from "/src/assets/minimal-proj.gif";
 
+
 const NAV_LINKS = [
   { key: "Projects", label: "work", id: "projects" },
   { key: "About", label: "about", id: "about" },
@@ -14,25 +15,25 @@ const WORK_ITEMS = [
     description: "Data Science",
     tag: "data science · exploring",
     tone: "work-card-strong",
-    thumbnail: minimalProjGif,
+    thumbnail: minimalProjGif
   },
   {
     description: "Interaction Design",
     tag: "ui/ux · exploring",
     tone: "work-card-light",
-    thumbnail: minimalProjGif,
+    thumbnail: minimalProjGif
   },
   {
     description: "Software Development",
     tag: "development · exploring",
     tone: "work-card-mid",
-    thumbnail: minimalProjGif,
+    thumbnail: minimalProjGif
   },
   {
     description: "Machine Learning",
     tag: "visualization · exploring",
     tone: "work-card-pale",
-    thumbnail: minimalProjGif,
+    thumbnail: minimalProjGif
   },
 ];
 

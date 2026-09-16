@@ -6,11 +6,7 @@ const HOBBIES = [
   {
     title: "Guitar",
     detail: "Still learning, still enjoying the process more than the results.",
-  },
-  {
-    title: "Building things for the web",
-    detail: "This site's ancestor was a hand-coded HTML/CSS/JS page — still my proudest project.",
-  },
+  }
 ];
 
 export default function Fun() {

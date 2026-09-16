@@ -6,31 +6,12 @@ import CustomCursor from "./CustomCursor";
 
 export default function Layout({ theme, setTheme }) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrollShow, setScrollShow] = useState(false);
-  const lastY = useRef(0);
   const location = useLocation();
   const navWrapperRef = useRef(null);
-
-  // Reveal on scroll-up, hide on scroll-down
-  useEffect(() => {
-    function onScroll() {
-      const y = window.scrollY;
-      if (y < lastY.current - 4) {
-        setScrollShow(true);
-      } else if (y > lastY.current + 4) {
-        setScrollShow(false);
-      }
-      lastY.current = y;
-    }
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   // Close the nav whenever you navigate to a new page
   useEffect(() => {
     setMenuOpen(false);
-    setScrollShow(false);
-    lastY.current = 0;
   }, [location.pathname]);
 
   // Close the nav on click/tap outside it
@@ -51,25 +32,27 @@ export default function Layout({ theme, setTheme }) {
     };
   }, [menuOpen]);
 
-  const navVisible = menuOpen || scrollShow;
-
   return (
     <div className={theme === "dark" ? "theme-dark" : "theme-light"}>
       <CustomCursor />
 
       <div ref={navWrapperRef}>
-        <button
-          className="hamburger-btn"
-          aria-label="Toggle menu"
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen((prev) => !prev)}
-        >
-          <span className="hamburger-line" />
-          <span className="hamburger-line" />
-          <span className="hamburger-line" />
-        </button>
+        {/* Always-visible bar, pinned to the top no matter what */}
+        <div className="top-bar-fixed">
+          <button
+            className="hamburger-btn"
+            aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((prev) => !prev)}
+          >
+            <span className="hamburger-line" />
+            <span className="hamburger-line" />
+            <span className="hamburger-line" />
+          </button>
+        </div>
 
-        <div className={`top-menu-fixed ${navVisible ? "menu-visible" : "menu-hidden"}`}>
+        {/* Menu bar — drops down under the fixed bar when toggled */}
+        <div className={`top-menu-fixed ${menuOpen ? "menu-visible" : "menu-hidden"}`}>
           <Nav theme={theme} setTheme={setTheme} />
         </div>
       </div>

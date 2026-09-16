@@ -5,8 +5,7 @@ const LINKS = [
   { to: "/about", label: "about" },
   { to: "/skills", label: "skills" },
   { to: "/experience", label: "experience" },
-  { to: "/fun", label: "fun" },
-  { to: "/contact", label: "contact" },
+  { to: "/fun", label: "fun" }
 ];
 
 export default function Nav({ theme, setTheme }) {
